@@ -122,21 +122,19 @@
     </plugins>
   </build>
 
-  <!--
   <mailingLists>
     <mailingList>
-      <name>Sonar users mailing list</name>
+      <name>Sonar dev mailing list</name>
       <subscribe>http://xircles.codehaus.org/projects/sonar/lists</subscribe>
       <unsubscribe>http://xircles.codehaus.org/projects/sonar/lists</unsubscribe>
-      <post>user@sonar.codehaus.org</post>
-      <archive>http://www.nabble.com/Sonar-f30151.html</archive>
+      <post>dev@sonar.codehaus.org</post>
     </mailingList>
-  </mailingLists>-->
+  </mailingLists>
 
   <scm>
-    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/pom</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/pom</developerConnection>
-    <url>http://svn.sonar-plugins.codehaus.org</url>
+    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
+    <url>http://svn.codehaus.org/sonar-plugins</url>
   </scm>
 
   <!--
