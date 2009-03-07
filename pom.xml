@@ -131,9 +131,9 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/tags/parent-1</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/tags/parent-1</developerConnection>
-    <url>scm:svn:https://svn.codehaus.org/sonar-plugins/tags/parent-1</url>
+    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
+    <url>http://svn.codehaus.org/sonar-plugins</url>
   </scm>
 
   <!--
