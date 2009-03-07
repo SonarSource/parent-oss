@@ -3,7 +3,7 @@
   <groupId>org.codehaus.sonar-plugins</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
-  <version>1</version>
+  <version>1-SNAPSHOT</version>
   <name>Sonar plugins parent</name>
   <url>http://sonar-plugins.codehaus.org</url>
 
