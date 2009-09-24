@@ -21,6 +21,7 @@
     <snapshotRepository>
       <id>sonar-plugins</id>
       <name>Sonar plugins snapshot repository</name>
+      <uniqueVersion>false</uniqueVersion>
       <url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</url>
     </snapshotRepository>
   </distributionManagement>
