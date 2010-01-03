@@ -7,6 +7,11 @@
   <name>Sonar plugins parent</name>
   <url>http://sonar-plugins.codehaus.org</url>
 
+  <inceptionYear>2009</inceptionYear>
+  <organization>
+    <name>SonarSource SA</name>
+  </organization>
+
   <issueManagement>
     <system>jira</system>
     <url>http://jira.codehaus.org/browse/SONARPLUGINS</url>
@@ -29,13 +34,13 @@
   <build>
     <pluginManagement>
       <plugins>
-	    <!-- Plugins ordered by shortname (archetype, assembly ...) -->
+        <!-- Plugins ordered by shortname (archetype, assembly ...) -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>2.3</version>
         </plugin>
-		<plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.0.2</version>
@@ -56,6 +61,26 @@
           <version>2.2</version>
         </plugin>
         <plugin>
+          <groupId>com.mycila.maven-license-plugin</groupId>
+          <artifactId>maven-license-plugin</artifactId>
+          <version>1.5.0</version>
+          <configuration>
+            <header>src/license-header.txt</header>
+            <includes>
+              <include>src/main/java/**</include>
+              <include>src/test/java/**</include>
+            </includes>
+            <mapping>
+              <java>SLASHSTAR_STYLE</java>
+            </mapping>
+            <properties>
+              <year>${project.inceptionYear}</year>
+              <name>${organization.name}</name>
+            </properties>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>2.2</version>
@@ -68,7 +93,7 @@
             <tagBase>https://svn.codehaus.org/sonar-plugins/tags</tagBase>
           </configuration>
         </plugin>
-		<plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>2.2</version>
@@ -132,6 +157,18 @@
             <phase>verify</phase>
             <goals>
               <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>check-license</id>
+            <goals>
+              <goal>check</goal>
             </goals>
           </execution>
         </executions>
