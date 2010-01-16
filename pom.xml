@@ -75,7 +75,7 @@
             </mapping>
             <properties>
               <year>${project.inceptionYear}</year>
-              <name>${organization.name}</name>
+              <name>${project.organization.name}</name>
             </properties>
             <encoding>UTF-8</encoding>
           </configuration>
