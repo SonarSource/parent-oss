@@ -174,6 +174,10 @@
                   <version>${jdk.min.version}</version>
                 </requireJavaVersion>
                 <requirePluginVersions>
+                  <!--
+                  This rule produces warning under maven-3.0-beta-1 :
+                  "This rule is not compatible with the current version of Maven."
+                  -->
                   <message>Build reproducibility : always define plugin versions</message>
                   <banLatest>true</banLatest>
                   <banRelease>true</banRelease>
