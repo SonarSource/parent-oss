@@ -11,14 +11,31 @@
   <url>http://sonar-plugins.codehaus.org</url>
   <inceptionYear>2009</inceptionYear>
   <organization>
-    <name>SonarSource SA</name>
+    <name>SonarSource</name>
   </organization>
 
+  <mailingLists>
+    <mailingList>
+      <name>Sonar dev mailing list</name>
+      <subscribe>http://xircles.codehaus.org/projects/sonar/lists</subscribe>
+      <unsubscribe>http://xircles.codehaus.org/projects/sonar/lists</unsubscribe>
+      <post>dev@sonar.codehaus.org</post>
+    </mailingList>
+  </mailingLists>
+
+  <scm>
+    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
+    <url>http://svn.codehaus.org/sonar-plugins</url>
+  </scm>
   <issueManagement>
     <system>jira</system>
     <url>http://jira.codehaus.org/browse/SONARPLUGINS</url>
   </issueManagement>
-
+  <ciManagement>
+    <system>bamboo</system>
+    <url>http://ci.codehaus.org/browse/SONAR</url>
+  </ciManagement>
   <distributionManagement>
     <repository>
       <id>sonar-plugins</id>
@@ -142,6 +159,12 @@
           <!-- version 2.1 requires Maven version 2.1.0 -->
           <version>2.0-beta-7</version>
         </plugin>
+        <!-- EXPERIMENTAL until Sonar 2.2 release -->
+        <plugin>
+          <groupId>org.codehaus.sonar</groupId>
+          <artifactId>sonar-dev-mojo</artifactId>
+          <version>2.2M1</version>
+        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -239,27 +262,15 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.sonar</groupId>
+        <artifactId>sonar-dev-mojo</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <!-- Remove it when sonar-dev-mojo version 2.2 would be released -->
+          <pluginClass>${sonar.pluginClass}</pluginClass>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-
-  <mailingLists>
-    <mailingList>
-      <name>Sonar dev mailing list</name>
-      <subscribe>http://xircles.codehaus.org/projects/sonar/lists</subscribe>
-      <unsubscribe>http://xircles.codehaus.org/projects/sonar/lists</unsubscribe>
-      <post>dev@sonar.codehaus.org</post>
-    </mailingList>
-  </mailingLists>
-
-  <scm>
-    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
-    <url>http://svn.codehaus.org/sonar-plugins</url>
-  </scm>
-
-  <ciManagement>
-    <system>bamboo</system>
-    <url>http://ci.codehaus.org/browse/SONAR</url>
-  </ciManagement>
-
 </project>
