@@ -38,12 +38,12 @@
   </ciManagement>
   <distributionManagement>
     <repository>
-      <id>sonar-plugins</id>
+      <id>codehaus.org</id>
       <name>Sonar plugins repository</name>
       <url>dav:https://dav.codehaus.org/repository/sonar-plugins</url>
     </repository>
     <snapshotRepository>
-      <id>sonar-plugins</id>
+      <id>codehaus.org</id>
       <name>Sonar plugins snapshot repository</name>
       <uniqueVersion>false</uniqueVersion>
       <url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</url>
