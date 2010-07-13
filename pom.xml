@@ -162,8 +162,8 @@
         <!-- EXPERIMENTAL until Sonar 2.2 release -->
         <plugin>
           <groupId>org.codehaus.sonar</groupId>
-          <artifactId>sonar-dev-mojo</artifactId>
-          <version>2.2M1</version>
+          <artifactId>sonar-packaging-maven-plugin</artifactId>
+          <version>0.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -264,12 +264,8 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.sonar</groupId>
-        <artifactId>sonar-dev-mojo</artifactId>
+        <artifactId>sonar-packaging-maven-plugin</artifactId>
         <extensions>true</extensions>
-        <configuration>
-          <!-- Remove it when sonar-dev-mojo version 2.2 would be released -->
-          <pluginClass>${sonar.pluginClass}</pluginClass>
-        </configuration>
       </plugin>
     </plugins>
   </build>
