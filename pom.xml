@@ -4,7 +4,7 @@
 
   <groupId>org.codehaus.sonar-plugins</groupId>
   <artifactId>parent</artifactId>
-  <version>6-SNAPSHOT</version>
+  <version>6</version>
   <packaging>pom</packaging>
 
   <name>Sonar plugins parent</name>
@@ -24,9 +24,9 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
-    <url>http://svn.codehaus.org/sonar-plugins</url>
+    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/tags/parent-6</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/tags/parent-6</developerConnection>
+    <url>scm:svn:https://svn.codehaus.org/sonar-plugins/tags/parent-6</url>
   </scm>
   <issueManagement>
     <system>jira</system>
