@@ -267,6 +267,7 @@
           </execution>
         </executions>
       </plugin>
+      <!-- See SONARPLUGINS-506
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -287,6 +288,7 @@
           </execution>
         </executions>
       </plugin>
+      -->
       <plugin>
         <groupId>org.codehaus.sonar</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
