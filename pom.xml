@@ -164,7 +164,6 @@
           <!-- version 2.1 requires Maven version 2.1.0 -->
           <version>2.0-beta-7</version>
         </plugin>
-        <!-- EXPERIMENTAL until Sonar 2.2 release -->
         <plugin>
           <groupId>org.codehaus.sonar</groupId>
           <artifactId>sonar-packaging-maven-plugin</artifactId>
@@ -215,17 +214,6 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifestEntries>
-              <Version>${project.version}</Version>
-            </manifestEntries>
-          </archive>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
