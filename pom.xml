@@ -54,6 +54,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>2.0</maven.min.version>
     <jdk.min.version>1.5</jdk.min.version>
+
+    <!-- Plugins versions -->
+    <version.sonar-packaging.plugin>0.1</version.sonar-packaging.plugin>
+    <version.sonar-dev.plugin>0.7</version.sonar-dev.plugin>
   </properties>
 
   <build>
@@ -167,7 +171,12 @@
         <plugin>
           <groupId>org.codehaus.sonar</groupId>
           <artifactId>sonar-packaging-maven-plugin</artifactId>
-          <version>0.1</version>
+          <version>${version.sonar-packaging.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.sonar</groupId>
+          <artifactId>sonar-dev-maven-plugin</artifactId>
+          <version>${version.sonar-dev.plugin}</version>
         </plugin>
       </plugins>
     </pluginManagement>
