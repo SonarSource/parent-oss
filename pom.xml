@@ -82,8 +82,8 @@
 
     <version.license.plugin>1.6.1</version.license.plugin>
 
-    <version.sonar-packaging.plugin>0.1</version.sonar-packaging.plugin>
-    <version.sonar-dev.plugin>0.7</version.sonar-dev.plugin>
+    <version.sonar-packaging.plugin>0.3</version.sonar-packaging.plugin>
+    <version.sonar-dev.plugin>0.9</version.sonar-dev.plugin>
   </properties>
 
   <build>
