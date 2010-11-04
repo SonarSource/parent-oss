@@ -15,6 +15,14 @@
     <name>SonarSource</name>
     <url>http://www.sonarsource.com</url>
   </organization>
+  <!-- License defined here, because most of projects uses this license. Can be overridden in children POMs. -->
+  <licenses>
+    <license>
+      <name>GNU LGPL 3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <mailingLists>
     <mailingList>
@@ -86,6 +94,11 @@
 
     <version.sonar-packaging.plugin>0.3</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>0.9</version.sonar-dev.plugin>
+
+    <!-- To configure animal-sniffer to check API compat --> 
+    <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
+    <animal-sniffer.signature.artifactId>java15</animal-sniffer.signature.artifactId>
+    <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
   </properties>
 
   <build>
@@ -217,6 +230,7 @@
           <target>${jdk.min.version}</target>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -238,7 +252,7 @@
                 </requireJavaVersion>
                 <requirePluginVersions>
                   <!--
-                  This rule produces warning under maven-3.0-beta-1 :
+                  This rule produces warning under Maven 3.0 :
                   "This rule is not compatible with the current version of Maven."
                   -->
                   <message>Build reproducibility : always define plugin versions</message>
@@ -246,11 +260,19 @@
                   <banRelease>true</banRelease>
                   <phases>clean,deploy</phases>
                 </requirePluginVersions>
+                <bannedDependencies>
+                  <searchTransitive>true</searchTransitive>
+                  <excludes>
+                    <!-- See SONARPLUGINS-506 -->
+                    <exclude>com.ibm.icu:icu4j:2.6.1</exclude>
+                  </excludes>
+                </bannedDependencies>
               </rules>
             </configuration>
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
@@ -264,6 +286,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
@@ -291,7 +314,7 @@
           </execution>
         </executions>
       </plugin>
-      <!-- See SONARPLUGINS-506
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -304,15 +327,15 @@
             </goals>
             <configuration>
               <signature>
-                <groupId>org.codehaus.mojo.signature</groupId>
-                <artifactId>java15</artifactId>
-                <version>1.0</version>
+                <groupId>${animal-sniffer.signature.groupId}</groupId>
+                <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
+                <version>${animal-sniffer.signature.version}</version>
               </signature>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      -->
+
       <plugin>
         <groupId>org.codehaus.sonar</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
