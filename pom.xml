@@ -264,7 +264,7 @@
                   <searchTransitive>true</searchTransitive>
                   <excludes>
                     <!-- See SONARPLUGINS-506 -->
-                    <exclude>com.ibm.icu:icu4j:2.6.1</exclude>
+                    <exclude>com.ibm.icu:icu4j:[2.6.1]</exclude>
                   </excludes>
                 </bannedDependencies>
               </rules>
