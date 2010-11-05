@@ -90,12 +90,19 @@
     <version.animal-sniffer.plugin>1.6</version.animal-sniffer.plugin>
     <version.gwt.plugin>1.2</version.gwt.plugin>
 
-    <version.license.plugin>1.6.1</version.license.plugin>
+    <version.license.plugin>1.8.0</version.license.plugin>
 
     <version.sonar-packaging.plugin>0.3</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>0.9</version.sonar-dev.plugin>
 
-    <!-- To configure animal-sniffer to check API compat --> 
+    <!-- To configure maven-license-plugin to check license headers -->
+    <license.name>GNU LGPL 3</license.name>
+    <license.title>${project.name}</license.title>
+    <license.year>${project.inceptionYear}</license.year>
+    <license.owner>${project.organization.name}</license.owner>
+    <license.mailto>dev@sonar.codehaus.org</license.mailto>
+
+    <!-- To configure animal-sniffer to check API compat -->
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
     <animal-sniffer.signature.artifactId>java15</animal-sniffer.signature.artifactId>
     <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
@@ -243,6 +250,10 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
+                  <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
+                  <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
+                </requireMavenVersion>
+                <requireMavenVersion>
                   <message>To build this project Maven ${maven.min.version} (or upper) is required. Please install it.</message>
                   <version>${maven.min.version}</version>
                 </requireMavenVersion>
@@ -255,15 +266,16 @@
                   This rule produces warning under Maven 3.0 :
                   "This rule is not compatible with the current version of Maven."
                   -->
-                  <message>Build reproducibility : always define plugin versions</message>
+                  <message>Build reproducibility : always define plugin versions!</message>
                   <banLatest>true</banLatest>
                   <banRelease>true</banRelease>
                   <phases>clean,deploy</phases>
                 </requirePluginVersions>
                 <bannedDependencies>
+                  <!-- See SONARPLUGINS-506 -->
+                  <message>Animal-sniffer throws exception when icu4j version 2.6.1 used.</message>
                   <searchTransitive>true</searchTransitive>
                   <excludes>
-                    <!-- See SONARPLUGINS-506 -->
                     <exclude>com.ibm.icu:icu4j:[2.6.1]</exclude>
                   </excludes>
                 </bannedDependencies>
@@ -290,8 +302,19 @@
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.sonar-plugins</groupId>
+            <artifactId>license-headers</artifactId>
+            <version>1.0-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
         <configuration>
-          <header>src/license-header.txt</header>
+          <header>org/sonar/plugins/licenseheaders/${license.name}.txt</header>
+          <validHeaders>
+            <validHeader>org/sonar/plugins/licenseheaders/Sonar.txt</validHeader>
+          </validHeaders>
+          <strictCheck>true</strictCheck>
           <includes>
             <include>src/main/java/**</include>
             <include>src/test/java/**</include>
@@ -300,14 +323,16 @@
             <java>SLASHSTAR_STYLE</java>
           </mapping>
           <properties>
-            <year>${project.inceptionYear}</year>
-            <name>${project.organization.name}</name>
+            <title>${license.title}</title>
+            <year>${license.year}</year>
+            <owner>${license.owner}</owner>
+            <mailto>${license.mailto}</mailto>
           </properties>
           <encoding>${project.build.sourceEncoding}</encoding>
         </configuration>
         <executions>
           <execution>
-            <id>check-license</id>
+            <id>enforce-license-headers</id>
             <goals>
               <goal>check</goal>
             </goals>
@@ -320,7 +345,7 @@
         <artifactId>animal-sniffer-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>check-java-version</id>
+            <id>enforce-java-api-compatibility</id>
             <phase>verify</phase>
             <goals>
               <goal>check</goal>
