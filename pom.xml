@@ -92,7 +92,7 @@
 
     <version.license.plugin>1.8.0</version.license.plugin>
 
-    <version.sonar-packaging.plugin>0.3</version.sonar-packaging.plugin>
+    <version.sonar-packaging.plugin>1.0</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>0.9</version.sonar-dev.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
@@ -293,7 +293,7 @@
             <id>attach-sources</id>
             <phase>verify</phase>
             <goals>
-              <goal>jar</goal>
+              <goal>jar-no-fork</goal>
             </goals>
           </execution>
         </executions>
