@@ -73,7 +73,7 @@
     <version.compiler.plugin>2.3.1</version.compiler.plugin>
     <version.dependency.plugin>2.1</version.dependency.plugin>
     <version.deploy.plugin>2.5</version.deploy.plugin>
-    <version.enforcer.plugin>1.0-beta-1</version.enforcer.plugin>
+    <version.enforcer.plugin>1.0</version.enforcer.plugin>
     <version.failsafe.plugin>2.5</version.failsafe.plugin>
     <version.install.plugin>2.3.1</version.install.plugin>
     <version.jar.plugin>2.3.1</version.jar.plugin>
@@ -176,6 +176,9 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${version.javadoc.plugin}</version>
+          <configuration>
+            <quiet>true</quiet>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -188,6 +191,9 @@
           <version>${version.release.plugin}</version>
           <configuration>
             <tagBase>https://svn.codehaus.org/sonar-plugins/tags</tagBase>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <useReleaseProfile>false</useReleaseProfile>
+            <releaseProfiles>release</releaseProfiles>
           </configuration>
         </plugin>
         <plugin>
@@ -279,6 +285,7 @@
                     <exclude>com.ibm.icu:icu4j:[2.6.1]</exclude>
                   </excludes>
                 </bannedDependencies>
+                <DependencyConvergence/>
               </rules>
             </configuration>
           </execution>
@@ -341,31 +348,55 @@
       </plugin>
 
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>enforce-java-api-compatibility</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <signature>
-                <groupId>${animal-sniffer.signature.groupId}</groupId>
-                <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
-                <version>${animal-sniffer.signature.version}</version>
-              </signature>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <groupId>org.codehaus.sonar</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
         <extensions>true</extensions>
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <!-- This profile is activated when a project is released. -->
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <!-- Generates Javadoc -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Checks compatibility with Java API -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>animal-sniffer-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforce-java-api-compatibility</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <configuration>
+                  <signature>
+                    <groupId>${animal-sniffer.signature.groupId}</groupId>
+                    <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
+                    <version>${animal-sniffer.signature.version}</version>
+                  </signature>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
