@@ -10,11 +10,6 @@
   <name>Sonar plugins parent</name>
   <url>http://sonar-plugins.codehaus.org</url>
   <inceptionYear>2009</inceptionYear>
-  <!-- Organization defined here, because SonarSource is major contributor. Can be overridden in children POMs. -->
-  <organization>
-    <name>SonarSource</name>
-    <url>http://www.sonarsource.com</url>
-  </organization>
   <!-- License defined here, because most of projects uses this license. Can be overridden in children POMs. -->
   <licenses>
     <license>
@@ -285,7 +280,9 @@
                     <exclude>com.ibm.icu:icu4j:[2.6.1]</exclude>
                   </excludes>
                 </bannedDependencies>
+                <!-- TODO SONARPLUGINS-797
                 <DependencyConvergence/>
+                -->
               </rules>
             </configuration>
           </execution>
@@ -392,6 +389,34 @@
                     <version>${animal-sniffer.signature.version}</version>
                   </signature>
                 </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- This profile is used to launch integration tests with the failsafe plugin. -->
+    <profile>
+      <id>integration-tests</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>failsafe-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>integration-test</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>integration-test</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>verify</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>verify</goal>
+                </goals>
               </execution>
             </executions>
           </plugin>
