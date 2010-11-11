@@ -315,7 +315,7 @@
         <configuration>
           <header>org/sonar/plugins/licenseheaders/${license.name}.txt</header>
           <validHeaders>
-            <validHeader>org/sonar/plugins/licenseheaders/Sonar.txt</validHeader>
+            <validHeader>org/sonar/plugins/licenseheaders/SonarSource.txt</validHeader>
           </validHeaders>
           <strictCheck>true</strictCheck>
           <includes>
