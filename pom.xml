@@ -187,7 +187,11 @@
             <tagBase>https://svn.codehaus.org/sonar-plugins/tags</tagBase>
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <useReleaseProfile>false</useReleaseProfile>
-            <releaseProfiles>release</releaseProfiles>
+            <!--
+            Allows to activate release profile during release.
+            We don't use releaseProfiles parameter, because it affects only release:perform goal
+            -->
+            <arguments>-Prelease</arguments>
           </configuration>
         </plugin>
         <plugin>
