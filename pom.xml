@@ -84,7 +84,7 @@
     <version.animal-sniffer.plugin>1.6</version.animal-sniffer.plugin>
     <version.gwt.plugin>1.2</version.gwt.plugin>
 
-    <version.license.plugin>1.8.0</version.license.plugin>
+    <version.license.plugin>1.9.0</version.license.plugin>
 
     <version.sonar-packaging.plugin>1.0</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.0.1</version.sonar-dev.plugin>
@@ -349,6 +349,7 @@
         <executions>
           <execution>
             <id>enforce-license-headers</id>
+            <phase>validate</phase>
             <goals>
               <goal>check</goal>
             </goals>
