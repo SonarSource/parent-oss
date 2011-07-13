@@ -48,10 +48,10 @@
       <url>dav:https://dav.codehaus.org/repository/sonar-plugins</url>
     </repository>
     <snapshotRepository>
-      <id>codehaus.org</id>
+      <id>sonarplugins-snapshots</id>
       <name>Sonar plugins snapshot repository</name>
       <uniqueVersion>false</uniqueVersion>
-      <url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</url>
+      <url>${sonar.snapshotRepository.url}</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -59,6 +59,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>2.0</maven.min.version>
     <jdk.min.version>1.5</jdk.min.version>
+    <sonar.snapshotRepository.url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</sonar.snapshotRepository.url>
 
     <!-- ================ -->
     <!-- Plugins versions -->
