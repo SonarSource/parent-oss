@@ -28,6 +28,10 @@
     </mailingList>
   </mailingLists>
 
+  <prerequisites>
+    <maven>2.2.1</maven>
+  </prerequisites>
+
   <scm>
     <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
     <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
@@ -57,7 +61,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.min.version>2.0</maven.min.version>
     <jdk.min.version>1.5</jdk.min.version>
     <sonar.snapshotRepository.id>codehaus.org</sonar.snapshotRepository.id>
     <sonar.snapshotRepository.url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</sonar.snapshotRepository.url>
@@ -271,12 +274,8 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
-                  <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
-                </requireMavenVersion>
-                <requireMavenVersion>
-                  <message>To build this project Maven ${maven.min.version} (or upper) is required. Please install it.</message>
-                  <version>${maven.min.version}</version>
+                  <message>To build this project Maven ${project.prerequisites.maven} (or upper) is required. Please install it.</message>
+                  <version>${project.prerequisites.maven}</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
                   <message>To build this project JDK ${jdk.min.version} (or upper) is required. Please install it.</message>
