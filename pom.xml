@@ -44,7 +44,7 @@
   </issueManagement>
   <ciManagement>
     <system>bamboo</system>
-    <url>http://ci.codehaus.org/browse/SONAR</url>
+    <url>http://bamboo.ci.codehaus.org/browse/SONAR</url>
   </ciManagement>
   <distributionManagement>
     <repository>
