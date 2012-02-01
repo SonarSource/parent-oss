@@ -88,7 +88,7 @@
     <version.surefire.plugin>2.6</version.surefire.plugin>
     <version.site.plugin>2.1.1</version.site.plugin>
 
-    <version.animal-sniffer.plugin>1.6</version.animal-sniffer.plugin>
+    <version.animal-sniffer.plugin>1.7</version.animal-sniffer.plugin>
     <version.gwt.plugin>1.2</version.gwt.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
@@ -311,6 +311,27 @@
       </plugin>
 
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>animal-sniffer-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-java-api-compatibility</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <signature>
+                <groupId>${animal-sniffer.signature.groupId}</groupId>
+                <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
+                <version>${animal-sniffer.signature.version}</version>
+              </signature>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
         <executions>
@@ -390,27 +411,6 @@
                 <goals>
                   <goal>jar</goal>
                 </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <!-- Checks compatibility with Java API -->
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>animal-sniffer-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>enforce-java-api-compatibility</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-                <configuration>
-                  <signature>
-                    <groupId>${animal-sniffer.signature.groupId}</groupId>
-                    <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
-                    <version>${animal-sniffer.signature.version}</version>
-                  </signature>
-                </configuration>
               </execution>
             </executions>
           </plugin>
