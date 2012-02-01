@@ -107,11 +107,11 @@
 
   <build>
     <extensions>
-      <!-- See SONARPLUGINS-839 and SONARPLUGINS-840 -->
+      <!-- See SONARPLUGINS-839, SONARPLUGINS-840 and SONARPLUGINS-1457 -->
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-webdav-jackrabbit</artifactId>
-        <version>2.0</version>
+        <version>2.2</version>
       </extension>
     </extensions>
 
