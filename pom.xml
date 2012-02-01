@@ -29,7 +29,8 @@
   </mailingLists>
 
   <prerequisites>
-    <maven>2.2.1</maven>
+    <!-- Note that "prerequisites" not inherited, but used by versions-maven-plugin -->
+    <maven>${maven.min.version}</maven>
   </prerequisites>
 
   <scm>
@@ -61,6 +62,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.min.version>2.2.1</maven.min.version>
     <jdk.min.version>1.5</jdk.min.version>
     <sonar.snapshotRepository.id>codehaus.org</sonar.snapshotRepository.id>
     <sonar.snapshotRepository.url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</sonar.snapshotRepository.url>
@@ -274,8 +276,8 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <message>To build this project Maven ${project.prerequisites.maven} (or upper) is required. Please install it.</message>
-                  <version>${project.prerequisites.maven}</version>
+                  <message>To build this project Maven ${maven.min.version} (or upper) is required. Please install it.</message>
+                  <version>${maven.min.version}</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
                   <message>To build this project JDK ${jdk.min.version} (or upper) is required. Please install it.</message>
