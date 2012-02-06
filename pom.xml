@@ -76,7 +76,7 @@
     <version.dependency.plugin>2.1</version.dependency.plugin>
     <version.deploy.plugin>2.5</version.deploy.plugin>
     <version.enforcer.plugin>1.0</version.enforcer.plugin>
-    <version.failsafe.plugin>2.6</version.failsafe.plugin>
+    <version.failsafe.plugin>2.12</version.failsafe.plugin>
     <version.install.plugin>2.3.1</version.install.plugin>
     <version.jar.plugin>2.3.1</version.jar.plugin>
     <version.javadoc.plugin>2.7</version.javadoc.plugin>
@@ -85,7 +85,7 @@
     <version.resources.plugin>2.4.3</version.resources.plugin>
     <version.shade.plugin>1.4</version.shade.plugin>
     <version.source.plugin>2.1.2</version.source.plugin>
-    <version.surefire.plugin>2.6</version.surefire.plugin>
+    <version.surefire.plugin>2.12</version.surefire.plugin>
     <version.site.plugin>2.1.1</version.site.plugin>
 
     <version.animal-sniffer.plugin>1.7</version.animal-sniffer.plugin>
@@ -271,6 +271,14 @@
         <configuration>
           <source>${jdk.min.version}</source>
           <target>${jdk.min.version}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <runOrder>random</runOrder>
         </configuration>
       </plugin>
 
