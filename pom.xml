@@ -63,7 +63,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>2.2.1</maven.min.version>
-    <jdk.min.version>1.5</jdk.min.version>
+    <jdk.min.version>1.6</jdk.min.version>
     <sonar.snapshotRepository.id>codehaus.org</sonar.snapshotRepository.id>
     <sonar.snapshotRepository.url>dav:https://dav.codehaus.org/snapshots.repository/sonar-plugins</sonar.snapshotRepository.url>
 
@@ -80,6 +80,7 @@
     <version.install.plugin>2.3.1</version.install.plugin>
     <version.jar.plugin>2.3.1</version.jar.plugin>
     <version.javadoc.plugin>2.7</version.javadoc.plugin>
+    <version.license.plugin>1.9.0</version.license.plugin>
     <version.plugin.plugin>2.6</version.plugin.plugin>
     <version.release.plugin>2.1</version.release.plugin>
     <version.resources.plugin>2.4.3</version.resources.plugin>
@@ -92,7 +93,6 @@
     <version.gwt.plugin>1.2</version.gwt.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
-    <version.license.plugin>1.9.0</version.license.plugin>
 
     <version.sonar-packaging.plugin>1.1</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.3.2</version.sonar-dev.plugin>
@@ -106,9 +106,12 @@
 
     <!-- To configure animal-sniffer to check API compat -->
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
-    <animal-sniffer.signature.artifactId>java15</animal-sniffer.signature.artifactId>
+    <animal-sniffer.signature.artifactId>java16</animal-sniffer.signature.artifactId>
     <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
-  </properties>
+    
+    <skipSanityChecks>false</skipSanityChecks>
+    <sonar.pluginTermsConditionsUrl>http://dist.sonarsource.com/SonarSource_Terms_And_Conditions.pdf
+    </sonar.pluginTermsConditionsUrl>  </properties>
 
   <build>
     <extensions>
@@ -127,6 +130,14 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>animal-sniffer-maven-plugin</artifactId>
           <version>${version.animal-sniffer.plugin}</version>
+          <configuration>
+            <signature>
+              <groupId>${animal-sniffer.signature.groupId}</groupId>
+              <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
+              <version>${animal-sniffer.signature.version}</version>
+            </signature>
+            <skip>${skipSanityChecks}</skip>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -393,11 +404,11 @@
             <mailto>${license.mailto}</mailto>
           </properties>
           <encoding>${project.build.sourceEncoding}</encoding>
+          <skip>${skipSanityChecks}</skip>
         </configuration>
         <executions>
           <execution>
             <id>enforce-license-headers</id>
-            <phase>validate</phase>
             <goals>
               <goal>check</goal>
             </goals>
