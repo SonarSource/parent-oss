@@ -108,10 +108,9 @@
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
     <animal-sniffer.signature.artifactId>java15</animal-sniffer.signature.artifactId>
     <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
-    
+
     <skipSanityChecks>false</skipSanityChecks>
-    <sonar.pluginTermsConditionsUrl>http://dist.sonarsource.com/SonarSource_Terms_And_Conditions.pdf
-    </sonar.pluginTermsConditionsUrl>  </properties>
+  </properties>
 
   <build>
     <extensions>
@@ -409,6 +408,7 @@
         <executions>
           <execution>
             <id>enforce-license-headers</id>
+            <phase>validate</phase>
             <goals>
               <goal>check</goal>
             </goals>
