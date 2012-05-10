@@ -113,8 +113,8 @@
     <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
 
     <skipSanityChecks>false</skipSanityChecks>
-    <license.skip>${skipSanityChecks}</license.skip>
-    <animal.sniffer.skip>${skipSanityChecks}</animal.sniffer.skip>
+    <skipLicenseChecks>${skipSanityChecks}</skipLicenseChecks>
+    <skipAnimalSnifferChecks>${skipSanityChecks}</skipAnimalSnifferChecks>
   </properties>
 
   <build>
@@ -140,6 +140,7 @@
               <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
               <version>${animal-sniffer.signature.version}</version>
             </signature>
+            <skip>${skipAnimalSnifferChecks}</skip>
           </configuration>
         </plugin>
         <plugin>
@@ -441,6 +442,7 @@
             <mailto>${license.mailto}</mailto>
           </properties>
           <encoding>${project.build.sourceEncoding}</encoding>
+          <skip>${skipLicenseChecks}</skip>
         </configuration>
         <executions>
           <execution>
