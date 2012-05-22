@@ -472,6 +472,7 @@
       <activation>
         <property>
           <name>skipSanityChecks</name>
+          <value>true</value>
         </property>
       </activation>
       <properties>
