@@ -91,11 +91,11 @@
     <version.source.plugin>2.1.2</version.source.plugin>
     <version.surefire.plugin>2.12</version.surefire.plugin>
     <version.site.plugin>2.1.1</version.site.plugin>
+    <version.gpg.plugin>1.4</version.gpg.plugin>
 
     <version.animal-sniffer.plugin>1.7</version.animal-sniffer.plugin>
     <version.gwt.plugin>1.2</version.gwt.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
-
 
     <version.sonar-packaging.plugin>1.1</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.5</version.sonar-dev.plugin>
@@ -270,6 +270,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>${version.site.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${version.gpg.plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
