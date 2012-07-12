@@ -73,27 +73,27 @@
     <!-- Plugins versions -->
     <!-- ================ -->
     <version.assembly.plugin>2.3</version.assembly.plugin>
-    <version.buildnumber.plugin>1.0</version.buildnumber.plugin>
-    <version.clean.plugin>2.4.1</version.clean.plugin>
+    <version.clean.plugin>2.5</version.clean.plugin>
     <version.compiler.plugin>2.5.1</version.compiler.plugin>
     <version.dependency.plugin>2.4</version.dependency.plugin>
     <version.deploy.plugin>2.7</version.deploy.plugin>
-    <version.enforcer.plugin>1.0.1</version.enforcer.plugin>
+    <version.enforcer.plugin>1.1</version.enforcer.plugin>
     <version.failsafe.plugin>2.12</version.failsafe.plugin>
     <version.install.plugin>2.3.1</version.install.plugin>
     <version.jar.plugin>2.4</version.jar.plugin>
     <version.javadoc.plugin>2.8.1</version.javadoc.plugin>
     <version.license.plugin>1.9.0</version.license.plugin>
-    <version.plugin.plugin>2.9</version.plugin.plugin>
-    <version.release.plugin>2.2.2</version.release.plugin>
+    <version.plugin.plugin>3.1</version.plugin.plugin>
+    <version.release.plugin>2.3.2</version.release.plugin>
     <version.resources.plugin>2.5</version.resources.plugin>
-    <version.shade.plugin>1.4</version.shade.plugin>
+    <version.shade.plugin>1.7.1</version.shade.plugin>
     <version.source.plugin>2.1.2</version.source.plugin>
     <version.surefire.plugin>2.12</version.surefire.plugin>
-    <version.site.plugin>2.1.1</version.site.plugin>
+    <version.site.plugin>3.1</version.site.plugin>
     <version.gpg.plugin>1.4</version.gpg.plugin>
 
-    <version.animal-sniffer.plugin>1.7</version.animal-sniffer.plugin>
+    <version.animal-sniffer.plugin>1.8</version.animal-sniffer.plugin>
+    <version.buildnumber.plugin>1.1</version.buildnumber.plugin>
     <version.gwt.plugin>1.2</version.gwt.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
