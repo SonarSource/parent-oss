@@ -98,7 +98,7 @@
 
 
     <version.sonar-packaging.plugin>1.1</version.sonar-packaging.plugin>
-    <version.sonar-dev.plugin>1.4</version.sonar-dev.plugin>
+    <version.sonar-dev.plugin>1.5</version.sonar-dev.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL 3</license.name>
