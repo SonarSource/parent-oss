@@ -72,24 +72,24 @@
     <!-- ================ -->
     <!-- Plugins versions -->
     <!-- ================ -->
-    <version.assembly.plugin>2.3</version.assembly.plugin>
+    <version.assembly.plugin>2.4</version.assembly.plugin>
     <version.clean.plugin>2.5</version.clean.plugin>
-    <version.compiler.plugin>2.5.1</version.compiler.plugin>
-    <version.dependency.plugin>2.5.1</version.dependency.plugin>
+    <version.compiler.plugin>3.0</version.compiler.plugin>
+    <version.dependency.plugin>2.6</version.dependency.plugin>
     <version.deploy.plugin>2.7</version.deploy.plugin>
-    <version.enforcer.plugin>1.1.1</version.enforcer.plugin>
-    <version.failsafe.plugin>2.12.4</version.failsafe.plugin>
+    <version.enforcer.plugin>1.2</version.enforcer.plugin>
+    <version.failsafe.plugin>2.13</version.failsafe.plugin>
     <version.install.plugin>2.4</version.install.plugin>
     <version.jar.plugin>2.4</version.jar.plugin>
     <version.jarjar.plugin>1.7</version.jarjar.plugin>
     <version.javadoc.plugin>2.9</version.javadoc.plugin>
     <version.license.plugin>1.9.0</version.license.plugin>
-    <version.plugin.plugin>3.1</version.plugin.plugin>
-    <version.release.plugin>2.3.2</version.release.plugin>
+    <version.plugin.plugin>3.2</version.plugin.plugin>
+    <version.release.plugin>2.4</version.release.plugin>
     <version.resources.plugin>2.6</version.resources.plugin>
     <version.shade.plugin>1.7.1</version.shade.plugin>
     <version.source.plugin>2.2.1</version.source.plugin>
-    <version.surefire.plugin>2.12.4</version.surefire.plugin>
+    <version.surefire.plugin>2.13</version.surefire.plugin>
     <version.site.plugin>3.2</version.site.plugin>
     <version.gpg.plugin>1.4</version.gpg.plugin>
 
