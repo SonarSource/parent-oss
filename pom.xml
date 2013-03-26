@@ -63,7 +63,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>2.2.1</maven.min.version>
-    <jdk.min.version>1.5</jdk.min.version>
+    <jdk.min.version>1.6</jdk.min.version>
     <timestamp>${maven.build.timestamp}</timestamp>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <sonar.snapshotRepository.id>codehaus.org</sonar.snapshotRepository.id>
@@ -109,8 +109,8 @@
 
     <!-- To configure animal-sniffer to check API compat -->
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
-    <animal-sniffer.signature.artifactId>java15</animal-sniffer.signature.artifactId>
-    <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
+    <animal-sniffer.signature.artifactId>java16</animal-sniffer.signature.artifactId>
+    <animal-sniffer.signature.version>1.1</animal-sniffer.signature.version>
   </properties>
 
   <build>
