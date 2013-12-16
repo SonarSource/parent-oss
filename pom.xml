@@ -85,7 +85,7 @@
     <version.javadoc.plugin>2.9</version.javadoc.plugin>
     <version.license.plugin>1.9.0</version.license.plugin>
     <version.plugin.plugin>3.2</version.plugin.plugin>
-    <version.release.plugin>2.4.1</version.release.plugin>
+    <version.release.plugin>2.4.2</version.release.plugin>
     <version.resources.plugin>2.6</version.resources.plugin>
     <version.shade.plugin>1.7.1</version.shade.plugin>
     <version.source.plugin>2.2.1</version.source.plugin>
@@ -245,6 +245,18 @@
             -->
             <arguments>-Prelease</arguments>
           </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.scm</groupId>
+              <artifactId>maven-scm-api</artifactId>
+              <version>1.8.1</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.maven.scm</groupId>
+              <artifactId>maven-scm-provider-gitexe</artifactId>
+              <version>1.8.1</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
