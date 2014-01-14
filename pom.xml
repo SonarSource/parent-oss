@@ -34,9 +34,9 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/parent</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/parent</developerConnection>
-    <url>http://svn.codehaus.org/sonar-plugins</url>
+    <connection>scm:git:https://github.com/SonarSource/parent-oss.git</connection>
+    <developerConnection>scm:git:git@github.com:SonarSource/parent-oss.git</developerConnection>
+    <url>https://github.com/SonarSource/parent-oss</url>
   </scm>
   <issueManagement>
     <system>jira</system>
