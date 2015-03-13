@@ -90,7 +90,7 @@
     <version.resources.plugin>2.7</version.resources.plugin>
     <version.shade.plugin>2.3</version.shade.plugin>
     <version.source.plugin>2.4</version.source.plugin>
-    <version.surefire.plugin>2.18</version.surefire.plugin>
+    <version.surefire.plugin>2.18.1</version.surefire.plugin>
     <version.site.plugin>3.4</version.site.plugin>
     <version.gpg.plugin>1.5</version.gpg.plugin>
 
