@@ -94,7 +94,7 @@
     <version.site.plugin>3.4</version.site.plugin>
     <version.gpg.plugin>1.5</version.gpg.plugin>
 
-    <version.animal-sniffer.plugin>1.13</version.animal-sniffer.plugin>
+    <version.animal-sniffer.plugin>1.14</version.animal-sniffer.plugin>
     <version.buildnumber.plugin>1.3</version.buildnumber.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
