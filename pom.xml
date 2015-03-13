@@ -85,7 +85,7 @@
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
     <version.javadoc.plugin>2.10.1</version.javadoc.plugin>
     <version.license.plugin>1.10.b1</version.license.plugin>
-    <version.plugin.plugin>3.3</version.plugin.plugin>
+    <version.plugin.plugin>3.4</version.plugin.plugin>
     <version.release.plugin>2.5.1</version.release.plugin>
     <version.resources.plugin>2.7</version.resources.plugin>
     <version.shade.plugin>2.3</version.shade.plugin>
