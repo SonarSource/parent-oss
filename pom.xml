@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.codehaus.sonar-plugins</groupId>
+  <groupId>org.sonarsource.sonar-plugins</groupId>
   <artifactId>parent</artifactId>
   <version>20-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sonar plugins parent</name>
-  <url>http://sonar-plugins.codehaus.org</url>
+  <url>http://docs.sonarqube.org/display/PLUG/Plugin+Library</url>
   <inceptionYear>2009</inceptionYear>
   <!-- License defined here, because most of projects uses this license. Can be overridden in children POMs. -->
   <licenses>
@@ -21,10 +21,10 @@
 
   <mailingLists>
     <mailingList>
-      <name>Sonar dev mailing list</name>
-      <subscribe>http://xircles.codehaus.org/projects/sonar/lists</subscribe>
-      <unsubscribe>http://xircles.codehaus.org/projects/sonar/lists</unsubscribe>
-      <post>dev@sonar.codehaus.org</post>
+      <name>SonarQue mailing list</name>
+      <subscribe>sonarqube+subscribe@googlegroups.com</subscribe>
+      <unsubscribe>sonarqube+unsubscribe@googlegroups.com</unsubscribe>
+      <post>sonarqube@googlegroups.com</post>
     </mailingList>
   </mailingLists>
 
@@ -41,23 +41,20 @@
   </scm>
   <issueManagement>
     <system>jira</system>
-    <url>http://jira.codehaus.org/browse/SONARPLUGINS</url>
+    <url>http://jira.sonarsource.com</url>
   </issueManagement>
   <ciManagement>
-    <system>bamboo</system>
-    <url>http://bamboo.ci.codehaus.org/browse/SONAR</url>
+    <system>travis-ci</system>
+    <url>https://travis-ci.org/SonarSource/</url>
   </ciManagement>
   <distributionManagement>
     <repository>
-      <id>codehaus.org</id>
-      <name>Sonar plugins repository</name>
-      <url>dav:https://dav.codehaus.org/repository/sonar-plugins</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <snapshotRepository>
-      <id>${sonar.snapshotRepository.id}</id>
-      <name>Sonar plugins snapshot repository</name>
-      <uniqueVersion>false</uniqueVersion>
-      <url>${sonar.snapshotRepository.url}</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -106,7 +103,7 @@
     <license.title>${project.name}</license.title>
     <license.year>${project.inceptionYear}</license.year>
     <license.owner>${project.organization.name}</license.owner>
-    <license.mailto>dev@sonar.codehaus.org</license.mailto>
+    <license.mailto>sonarqube@googlegroups.com</license.mailto>
 
     <!-- To configure animal-sniffer to check API compat -->
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
@@ -237,7 +234,6 @@
           <artifactId>maven-release-plugin</artifactId>
           <version>${version.release.plugin}</version>
           <configuration>
-            <tagBase>https://svn.codehaus.org/sonar-plugins/tags</tagBase>
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <useReleaseProfile>false</useReleaseProfile>
             <localCheckout>true</localCheckout>
