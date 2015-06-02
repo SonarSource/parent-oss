@@ -49,12 +49,14 @@
   </ciManagement>
   <distributionManagement>
     <repository>
-      <id>ossrh</id>
+      <id>sonatype-nexus-staging</id>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <id>${sonar.snapshotRepository.id}</id>
+      <name>Sonar plugins snapshot repository</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>${sonar.snapshotRepository.url}</url>
     </snapshotRepository>
   </distributionManagement>
 
