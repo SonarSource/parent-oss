@@ -86,10 +86,10 @@
     <url>https://travis-ci.org/SonarSource/</url>
   </ciManagement>
   <distributionManagement>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
+  <repository>
+    <id>bintray</id>
+    <url>https://api.bintray.com/maven/sonarsource/SonarQube/${project.artifactId}</url>
+  </repository>
     <snapshotRepository>
       <id>${sonar.snapshotRepository.id}</id>
       <name>Sonar plugins snapshot repository</name>
