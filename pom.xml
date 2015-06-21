@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource.sonar-plugins</groupId>
   <artifactId>parent</artifactId>
-  <version>21s-SNAPSHOT</version>
+  <version>21-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sonar plugins parent</name>
@@ -88,7 +88,7 @@
   <distributionManagement>
   <repository>
     <id>bintray</id>
-    <url>https://api.bintray.com/maven/sonarsource/SonarQube/${project.artifactId}</url>
+    <url>https://api.bintray.com/maven/sonarsource/SonarQube/${project.artifactId}/;publish=1</url>
   </repository>
     <snapshotRepository>
       <id>${sonar.snapshotRepository.id}</id>
