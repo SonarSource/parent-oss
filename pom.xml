@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource.sonar-plugins</groupId>
   <artifactId>parent</artifactId>
-  <version>22</version>
+  <version>23-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sonar plugins parent</name>
