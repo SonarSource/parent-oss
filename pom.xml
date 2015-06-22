@@ -409,7 +409,7 @@
 
                 <requireProperty>
                   <property>bintray.package</property>
-                  <message>bintray.package must be defined (requirement for deployment). It should be the main artifactId.</message>
+                  <message>bintray.package must be defined (requirement for deployment). Please contact infra.</message>
                 </requireProperty>
 
                 <requireMavenVersion>
