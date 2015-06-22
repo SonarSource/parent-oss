@@ -75,7 +75,7 @@
     <connection>scm:git:https://github.com/SonarSource/parent-oss.git</connection>
     <developerConnection>scm:git:git@github.com:SonarSource/parent-oss.git</developerConnection>
     <url>https://github.com/SonarSource/parent-oss</url>
-    <tag>HEAD</tag>
+    <tag>22</tag>
   </scm>
   <issueManagement>
     <system>jira</system>
@@ -546,6 +546,12 @@
   </build>
 
   <profiles>
+    <profile>
+      <id>release-parent-oss</id>    
+      <properties>
+        <bintray.package>parent</bintray.package>
+      </properties>
+    </profile>
     <profile>
       <id>skipSanityChecks</id>
       <activation>
