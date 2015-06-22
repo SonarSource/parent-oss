@@ -86,10 +86,10 @@
     <url>https://travis-ci.org/SonarSource/</url>
   </ciManagement>
   <distributionManagement>
-  <repository>
-    <id>bintray</id>
-    <url>https://api.bintray.com/maven/sonarsource/SonarQube/${project.artifactId}/;publish=1</url>
-  </repository>
+	  <repository>
+	    <id>bintray</id>
+	    <url>https://api.bintray.com/maven/sonarsource/SonarQube/${bintray.package}/;publish=1</url>
+	  </repository>
     <snapshotRepository>
       <id>${sonar.snapshotRepository.id}</id>
       <name>Sonar plugins snapshot repository</name>
@@ -377,14 +377,51 @@
             </goals>
             <configuration>
               <rules>
+								<requireProperty>
+									<property>project.description</property>
+									<message>Project description must be specified (requirement for OSSRH).</message>
+								</requireProperty>
+ 
+                <requireProperty>
+                  <property>project.name</property>
+                  <message>Project name must be specified (requirement for OSSRH).</message>
+                </requireProperty>
+ 
+                <requireProperty>
+                  <property>project.url</property>
+                  <message>Project url must be specified (requirement for OSSRH).</message>
+                </requireProperty>
+ 
+                <requireProperty>
+                  <property>project.licenses</property>
+                  <message>At least on license must be specified (requirement for OSSRH).</message>
+                </requireProperty>
+ 
+                <requireProperty>
+                  <property>project.developers</property>
+                  <message>At least one developer must be specified (requirement for OSSRH).</message>
+                </requireProperty>
+ 
+                <requireProperty>
+                  <property>project.scm.connection</property>
+                  <message>scm section should be defined in project (requirement for OSSRH).</message>
+                </requireProperty>
+
+                <requireProperty>
+                  <property>bintray.package</property>
+                  <message>bintray.package must be defined (requirement for deployment). It should be the main artifactId.</message>
+                </requireProperty>
+
                 <requireMavenVersion>
                   <message>To build this project Maven ${maven.min.version} (or upper) is required. Please install it.</message>
                   <version>${maven.min.version}</version>
                 </requireMavenVersion>
+
                 <requireJavaVersion>
                   <message>To build this project JDK ${jdk.min.version} (or upper) is required. Please install it.</message>
                   <version>${jdk.min.version}</version>
                 </requireJavaVersion>
+
                 <requirePluginVersions>
                   <!--
                   This rule produces warning under Maven 3.0 :
@@ -395,6 +432,7 @@
                   <banRelease>true</banRelease>
                   <phases>clean,deploy</phases>
                 </requirePluginVersions>
+
                 <bannedDependencies>
                   <!-- See SONARPLUGINS-506 -->
                   <message>Animal-sniffer throws exception when icu4j version 2.6.1 used.</message>
@@ -403,6 +441,7 @@
                     <exclude>com.ibm.icu:icu4j:[2.6.1]</exclude>
                   </excludes>
                 </bannedDependencies>
+
                 <!-- TODO SONARPLUGINS-797
                 <DependencyConvergence />
                 -->
