@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.sonarsource.parent</groupId>
@@ -104,7 +105,7 @@
     <timestamp>${maven.build.timestamp}</timestamp>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <sonar.snapshotRepository.id>snapshot</sonar.snapshotRepository.id>
-    <sonar.snapshotRepository.url />
+    <sonar.snapshotRepository.url/>
 
     <!-- ================ -->
     <!-- Plugins versions -->
@@ -133,7 +134,7 @@
     <version.buildnumber.plugin>1.3</version.buildnumber.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
-    <version.sonar-packaging.plugin>1.12.1</version.sonar-packaging.plugin>
+    <version.sonar-packaging.plugin>1.15</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
@@ -316,7 +317,7 @@
           <version>${version.native2ascii.plugin}</version>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.sonar</groupId>
+          <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
           <artifactId>sonar-packaging-maven-plugin</artifactId>
           <version>${version.sonar-packaging.plugin}</version>
         </plugin>
@@ -407,12 +408,14 @@
                 </requireProperty>
 
                 <requireMavenVersion>
-                  <message>To build this project Maven ${maven.min.version} (or upper) is required. Please install it.</message>
+                  <message>To build this project Maven ${maven.min.version} (or upper) is required. Please install it.
+                  </message>
                   <version>${maven.min.version}</version>
                 </requireMavenVersion>
 
                 <requireJavaVersion>
-                  <message>To build this project JDK ${jdk.min.version} (or upper) is required. Please install it.</message>
+                  <message>To build this project JDK ${jdk.min.version} (or upper) is required. Please install it.
+                  </message>
                   <version>${jdk.min.version}</version>
                 </requireJavaVersion>
 
@@ -523,7 +526,7 @@
       </plugin>
 
       <plugin>
-        <groupId>org.codehaus.sonar</groupId>
+        <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
