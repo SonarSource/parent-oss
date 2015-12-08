@@ -20,43 +20,6 @@
     </license>
   </licenses>
 
-  <developers>
-    <developer>
-      <id>ehartmann</id>
-      <name>Eric Hartmann</name>
-      <organization>SonarSource</organization>
-      <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>henryju</id>
-      <name>Julien Henry</name>
-      <email>julien.henry@sonarsource.com</email>
-      <organization>SonarSource</organization>
-      <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>Godin</id>
-      <name>Evgeny Mandrikov</name>
-      <email>evgeny.mandrikov@sonarsource.com</email>
-      <organization>SonarSource</organization>
-      <timezone>+3</timezone>
-    </developer>
-    <developer>
-      <id>olivier.gaudin</id>
-      <name>Olivier Gaudin</name>
-      <email>olivier.gaudin@sonarsource.com</email>
-      <organization>SonarSource</organization>
-      <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>simonbrandhof</id>
-      <name>Simon Brandhof</name>
-      <email>simon.brandhof@sonarsource.com</email>
-      <organization>SonarSource</organization>
-      <timezone>+1</timezone>
-    </developer>
-  </developers>
-
   <mailingLists>
     <mailingList>
       <name>SonarQue mailing list</name>
@@ -569,9 +532,9 @@
       <id>coverage-per-test</id>
       <dependencies>
         <dependency>
-          <groupId>org.codehaus.sonar-plugins.java</groupId>
+          <groupId>org.sonarsource.java</groupId>
           <artifactId>sonar-jacoco-listeners</artifactId>
-          <version>1.2</version>
+          <version>3.8</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
