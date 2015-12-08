@@ -121,7 +121,6 @@
     <version.jar.plugin>2.5</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
     <version.javadoc.plugin>2.10.1</version.javadoc.plugin>
-    <version.license.plugin>1.10.b1</version.license.plugin>
     <version.plugin.plugin>3.3</version.plugin.plugin>
     <version.release.plugin>2.5.1</version.release.plugin>
     <version.resources.plugin>2.7</version.resources.plugin>
@@ -234,11 +233,6 @@
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>jarjar-maven-plugin</artifactId>
           <version>${version.jarjar.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>com.mycila.maven-license-plugin</groupId>
-          <artifactId>maven-license-plugin</artifactId>
-          <version>${version.license.plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -486,33 +480,27 @@
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>org.codehaus.sonar-plugins</groupId>
-            <artifactId>license-headers</artifactId>
-            <version>1.0</version>
-          </dependency>
-        </dependencies>
+        <version>1.10.b1</version>
         <configuration>
-          <header>org/sonar/plugins/licenseheaders/${license.name}.txt</header>
-          <validHeaders>
-            <validHeader>org/sonar/plugins/licenseheaders/SonarSource.txt</validHeader>
-          </validHeaders>
+          <header>${project.basedir}/LICENSE.txt</header>
+          <failIfMissing>true</failIfMissing>
           <strictCheck>true</strictCheck>
-          <includes>
-            <include>src/main/java/**</include>
-            <include>src/test/java/**</include>
-          </includes>
+          <aggregate>true</aggregate>
+          <encoding>UTF-8</encoding>
           <mapping>
             <java>SLASHSTAR_STYLE</java>
+            <rb>SCRIPT_STYLE</rb>
+            <js>SLASHSTAR_STYLE</js>
+            <css>SLASHSTAR_STYLE</css>
+            <less>SLASHSTAR_STYLE</less>
           </mapping>
-          <properties>
-            <title>${license.title}</title>
-            <year>${license.year}</year>
-            <owner>${license.owner}</owner>
-            <mailto>${license.mailto}</mailto>
-          </properties>
-          <encoding>${project.build.sourceEncoding}</encoding>
+          <includes>
+            <include>src/*/java/**/*.java</include>
+            <include>src/*/js/**/*.js</include>
+            <include>src/*/css/**/*.css</include>
+            <include>src/*/less/**/*.less</include>
+            <include>src/main/**/*.rb</include>
+          </includes>
         </configuration>
         <executions>
           <execution>
