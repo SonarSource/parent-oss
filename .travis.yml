@@ -5,8 +5,7 @@ install: true
 jdk:
   - oraclejdk7
 
-script:
-  - mvn verify -B -e -V
+script: ./travis.sh
 
 cache:
   directories:
