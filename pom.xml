@@ -20,6 +20,39 @@
     </license>
   </licenses>
 
+  <developers>
+    <developer>
+      <id>ehartmann</id>
+      <name>Eric Hartmann</name>
+      <organization>SonarSource</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>henryju</id>
+      <name>Julien Henry</name>
+      <organization>SonarSource</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>Godin</id>
+      <name>Evgeny Mandrikov</name>
+      <organization>SonarSource</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>olivier.gaudin</id>
+      <name>Olivier Gaudin</name>
+      <organization>SonarSource</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>simonbrandhof</id>
+      <name>Simon Brandhof</name>
+      <organization>SonarSource</organization>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
   <mailingLists>
     <mailingList>
       <name>SonarQue mailing list</name>
