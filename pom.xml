@@ -547,10 +547,6 @@
             <include>src/*/css/**/*.css</include>
             <include>src/*/less/**/*.less</include>
           </includes>
-          <excludes>
-            <exclude>src/main/webapp/WEB-INF/gems/**/*.rb</exclude>
-            <exclude>src/main/webapp/WEB-INF/vendor/**/*.rb</exclude>
-          </excludes>
         </configuration>
         <executions>
           <execution>
