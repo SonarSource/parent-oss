@@ -537,7 +537,6 @@
           </properties>
           <mapping>
             <java>SLASHSTAR_STYLE</java>
-            <rb>SCRIPT_STYLE</rb>
             <js>SLASHSTAR_STYLE</js>
             <css>SLASHSTAR_STYLE</css>
             <less>SLASHSTAR_STYLE</less>
@@ -547,7 +546,6 @@
             <include>src/*/js/**/*.js</include>
             <include>src/*/css/**/*.css</include>
             <include>src/*/less/**/*.less</include>
-            <include>src/main/**/*.rb</include>
           </includes>
           <excludes>
             <exclude>src/main/webapp/WEB-INF/gems/**/*.rb</exclude>
