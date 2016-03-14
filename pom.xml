@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource.parent</groupId>
   <artifactId>parent</artifactId>
-  <version>31-SNAPSHOT</version>
+  <version>31</version>
   <packaging>pom</packaging>
 
   <name>SonarSource OSS parent</name>
@@ -71,7 +71,7 @@
     <connection>scm:git:https://github.com/SonarSource/parent-oss.git</connection>
     <developerConnection>scm:git:git@github.com:SonarSource/parent-oss.git</developerConnection>
     <url>https://github.com/SonarSource/parent-oss</url>
-    <tag>HEAD</tag>
+    <tag>31</tag>
   </scm>
   <issueManagement>
     <system>jira</system>
