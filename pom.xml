@@ -694,6 +694,7 @@
             <groupId>org.jfrog.buildinfo</groupId>
             <artifactId>artifactory-maven-plugin</artifactId>
             <version>${version.artifactory.plugin}</version>
+            <inherited>false</inherited>
             <executions>
               <execution>
                 <id>build-info</id>
