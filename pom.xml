@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource.parent</groupId>
   <artifactId>parent</artifactId>
-  <version>32-SNAPSHOT</version>
+  <version>32</version>
   <packaging>pom</packaging>
 
   <name>SonarSource OSS parent</name>
