@@ -10,6 +10,9 @@ function installTravisTools {
 
 installTravisTools
 
+# get current version from pom
+CURRENT_VERSION=`maven_expression "project.version"`
+
 if [[ $CURRENT_VERSION =~ "-SNAPSHOT" ]]; then
   echo "======= Found SNAPSHOT version ======="
   # Do not deploy a SNAPSHOT version but the release version related to this build
