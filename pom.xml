@@ -144,6 +144,8 @@
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
     <animal-sniffer.signature.artifactId>java17</animal-sniffer.signature.artifactId>
     <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
+
+    <gitRepositoryName>parent-oss</gitRepositoryName>
   </properties>
 
   <build>
