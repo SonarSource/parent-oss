@@ -140,11 +140,6 @@
     <license.years>${project.inceptionYear}-2016</license.years>
     <license.mailto>mailto:contact AT sonarsource DOT com</license.mailto>
 
-    <!-- To configure animal-sniffer to check API compat -->
-    <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
-    <animal-sniffer.signature.artifactId>java17</animal-sniffer.signature.artifactId>
-    <animal-sniffer.signature.version>1.0</animal-sniffer.signature.version>
-
     <gitRepositoryName>parent-oss</gitRepositoryName>
   </properties>
 
@@ -161,18 +156,6 @@
     <pluginManagement>
       <plugins>
         <!-- Plugins ordered by shortname (archetype, assembly ...) -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>animal-sniffer-maven-plugin</artifactId>
-          <version>${version.animal-sniffer.plugin}</version>
-          <configuration>
-            <signature>
-              <groupId>${animal-sniffer.signature.groupId}</groupId>
-              <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
-              <version>${animal-sniffer.signature.version}</version>
-            </signature>
-          </configuration>
-        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
@@ -465,26 +448,6 @@
                 <DependencyConvergence />
                 -->
               </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>enforce-java-api-compatibility</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <signature>
-                <groupId>${animal-sniffer.signature.groupId}</groupId>
-                <artifactId>${animal-sniffer.signature.artifactId}</artifactId>
-                <version>${animal-sniffer.signature.version}</version>
-              </signature>
             </configuration>
           </execution>
         </executions>
