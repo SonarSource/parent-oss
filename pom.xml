@@ -540,6 +540,7 @@
       <properties>
         <animal.sniffer.skip>true</animal.sniffer.skip>
         <license.skip>true</license.skip>
+        <enforcer.skip>true</enforcer.skip>
       </properties>
     </profile>
     <!-- This profile is activated when a project is released. -->
