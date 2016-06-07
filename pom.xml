@@ -114,14 +114,14 @@
     <version.enforcer.plugin>1.4.1</version.enforcer.plugin>
     <version.failsafe.plugin>2.18</version.failsafe.plugin>
     <version.install.plugin>2.5.2</version.install.plugin>
-    <version.jar.plugin>2.6</version.jar.plugin>
+    <version.jar.plugin>3.0.0</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
     <version.javadoc.plugin>2.10.3</version.javadoc.plugin>
     <version.plugin.plugin>3.3</version.plugin.plugin>
     <version.release.plugin>2.5.3</version.release.plugin>
     <version.resources.plugin>2.7</version.resources.plugin>
     <version.shade.plugin>2.3</version.shade.plugin>
-    <version.source.plugin>2.4</version.source.plugin>
+    <version.source.plugin>3.0.0</version.source.plugin>
     <version.surefire.plugin>2.18</version.surefire.plugin>
     <version.site.plugin>3.4</version.site.plugin>
     <version.artifactory.plugin>2.4.1</version.artifactory.plugin>
