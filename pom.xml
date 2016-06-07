@@ -130,7 +130,7 @@
     <version.buildnumber.plugin>1.4</version.buildnumber.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
-    <version.sonar-packaging.plugin>1.15</version.sonar-packaging.plugin>
+    <version.sonar-packaging.plugin>1.16</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
