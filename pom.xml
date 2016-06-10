@@ -284,6 +284,7 @@
             <pushChanges>false</pushChanges>
             <mavenExecutorId>forked-path</mavenExecutorId>
             <preparationGoals>clean install</preparationGoals>
+            <tagNameFormat>@{project.version}</tagNameFormat>
             <!--
             Allows to activate release profile during release.
             We don't use releaseProfiles parameter, because it affects only release:perform goal
