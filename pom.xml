@@ -126,7 +126,7 @@
     <version.source.plugin>2.4</version.source.plugin>
     <version.surefire.plugin>2.18</version.surefire.plugin>
     <version.site.plugin>3.4</version.site.plugin>
-    <version.artifactory.plugin>2.4.1</version.artifactory.plugin>
+    <version.artifactory.plugin>2.6.1</version.artifactory.plugin>
 
     <version.animal-sniffer.plugin>1.14</version.animal-sniffer.plugin>
     <version.buildnumber.plugin>1.4</version.buildnumber.plugin>
