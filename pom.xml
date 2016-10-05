@@ -679,10 +679,10 @@
                     <timeoutSec>60</timeoutSec>
                   </artifactory>
                   <deployProperties>
-                    <vcs.revision>{{GIT_COMMIT|TRAVIS_COMMIT}}</vcs.revision>
-                    <vcs.branch>{{GIT_BRANCH|TRAVIS_BRANCH}}</vcs.branch>
+                    <vcs.revision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT}}</vcs.revision>
+                    <vcs.branch>{{GIT_BRANCH|TRAVIS_BRANCH|APPVEYOR_REPO_BRANCH}}</vcs.branch>
                     <build.name>${gitRepositoryName}</build.name>
-                    <build.number>{{BUILD_ID|TRAVIS_BUILD_NUMBER}}</build.number>
+                    <build.number>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER}}</build.number>
                   </deployProperties>
                   <licenses>
                     <autoDiscover>true</autoDiscover>
@@ -701,9 +701,9 @@
                   </publisher>
                   <buildInfo>
                     <buildName>${gitRepositoryName}</buildName>
-                    <buildNumber>{{BUILD_ID|TRAVIS_BUILD_NUMBER}}</buildNumber>
+                    <buildNumber>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER}}</buildNumber>
                     <buildUrl>{{CI_BUILD_URL|BUILD_URL}}</buildUrl>
-                    <vcsRevision>{{GIT_COMMIT|TRAVIS_COMMIT}}</vcsRevision>
+                    <vcsRevision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT}}</vcsRevision>
                   </buildInfo>
                 </configuration>
               </execution>
