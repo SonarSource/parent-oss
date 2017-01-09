@@ -139,7 +139,7 @@
     <license.name>GNU LGPL v3</license.name>
     <license.owner>SonarSource SA</license.owner>
     <license.title>${project.name}</license.title>
-    <license.years>${project.inceptionYear}-2016</license.years>
+    <license.years>${project.inceptionYear}-2017</license.years>
     <license.mailto>mailto:contact AT sonarsource DOT com</license.mailto>
 
     <gitRepositoryName>parent-oss</gitRepositoryName>
