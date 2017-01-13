@@ -121,7 +121,7 @@
     <version.plugin.plugin>3.3</version.plugin.plugin>
     <version.release.plugin>2.5.3</version.release.plugin>
     <version.resources.plugin>2.7</version.resources.plugin>
-    <version.shade.plugin>2.3</version.shade.plugin>
+    <version.shade.plugin>2.4.3</version.shade.plugin>
     <!-- do not upgrade to 3.0.0, bugs already registered in 3.0.1 -->
     <version.source.plugin>2.4</version.source.plugin>
     <version.surefire.plugin>2.18</version.surefire.plugin>
