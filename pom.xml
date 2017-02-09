@@ -722,6 +722,8 @@
                     <vcs.branch>{{GIT_BRANCH|TRAVIS_BRANCH|APPVEYOR_REPO_BRANCH}}</vcs.branch>
                     <build.name>${gitRepositoryName}</build.name>
                     <build.number>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER}}</build.number>
+                    <sonar.plugin.version>${sonar.plugin.version}</sonar.plugin.version>
+                    <sonar.plugin.key>${sonar.plugin.key}</sonar.plugin.key>
                   </deployProperties>
                   <licenses>
                     <autoDiscover>true</autoDiscover>
