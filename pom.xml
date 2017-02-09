@@ -558,7 +558,7 @@
                       mainVersion = fields[0..2].join('.')
                     }
                     buildNumber = fields[3]
-                    project.properties['project.pluginDisplayVersion'] = "${mainVersion} (build ${buildNumber})"
+                    project.properties['sonar.pluginDisplayVersion'] = "${mainVersion} (build ${buildNumber})"
                   }
                 }
                 ]]>
