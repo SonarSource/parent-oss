@@ -548,7 +548,7 @@
               <source><![CDATA[
                 if (! "${project.version}".endsWith("-SNAPSHOT")) {
                   String mainVersion
-                  String buildNumber
+                  String actualBuildNumber
                   // example: "6.3.0.1234".
                   String[] fields = "${project.version}".tokenize('.')
                   if (fields.length == 4) {
@@ -557,8 +557,8 @@
                     } else {
                       mainVersion = fields[0..2].join('.')
                     }
-                    buildNumber = fields[3]
-                    project.properties['sonar.pluginDisplayVersion'] = "${mainVersion} (build ${buildNumber})"
+                    actualBuildNumber = fields[3]
+                    project.properties.setProperty("sonar.pluginDisplayVersion", "${mainVersion} (build ${actualBuildNumber})")
                   }
                 }
                 ]]>
