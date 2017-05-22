@@ -114,7 +114,7 @@
     <version.enforcer.plugin>1.4.1</version.enforcer.plugin>
     <version.failsafe.plugin>2.18</version.failsafe.plugin>
     <version.install.plugin>2.5.2</version.install.plugin>
-    <version.beanshell.plugin>1.2</version.beanshell.plugin>
+    <version.beanshell.plugin>1.4</version.beanshell.plugin>
     <!-- do not upgrade to 3.0.0, bugs already registered in 3.0.1/3.0.2 -->
     <version.jar.plugin>2.6</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
@@ -565,6 +565,7 @@
                 }
                 ]]>
               </script>
+              <quiet>true</quiet>
             </configuration>
           </execution>
         </executions>
