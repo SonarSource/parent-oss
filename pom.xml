@@ -115,8 +115,7 @@
     <version.failsafe.plugin>2.18</version.failsafe.plugin>
     <version.install.plugin>2.5.2</version.install.plugin>
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
-    <!-- do not upgrade to 3.0.0, bugs already registered in 3.0.1/3.0.2 -->
-    <version.jar.plugin>2.6</version.jar.plugin>
+    <version.jar.plugin>3.0.2</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
     <version.javadoc.plugin>2.10.3</version.javadoc.plugin>
     <version.plugin.plugin>3.3</version.plugin.plugin>
