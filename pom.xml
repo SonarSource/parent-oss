@@ -134,6 +134,8 @@
     <version.sonar-packaging.plugin>1.18.0.372</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
 
+    <version.codehaus.license.plugin>1.14</version.codehaus.license.plugin>
+
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL v3</license.name>
     <license.owner>SonarSource SA</license.owner>
@@ -219,7 +221,7 @@
           -->
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>1.8</version>
+          <version>${version.codehaus.license.plugin}</version>
           <configuration>
             <includedScopes>compile</includedScopes>
             <excludedLicenses>AGPL 3|GPL 2|GPL 3</excludedLicenses>
