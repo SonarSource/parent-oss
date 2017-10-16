@@ -120,7 +120,7 @@
     <version.javadoc.plugin>3.0.0-M1</version.javadoc.plugin>
     <version.plugin.plugin>3.5</version.plugin.plugin>
     <version.release.plugin>2.5.3</version.release.plugin>
-    <version.resources.plugin>2.7</version.resources.plugin>
+    <version.resources.plugin>3.0.2</version.resources.plugin>
     <version.shade.plugin>3.1.0</version.shade.plugin>
     <version.source.plugin>3.0.1</version.source.plugin>
     <version.surefire.plugin>2.20.1</version.surefire.plugin>
