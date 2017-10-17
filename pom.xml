@@ -137,6 +137,11 @@
     <version.codehaus.license.plugin>1.14</version.codehaus.license.plugin>
     <version.mycila.license.plugin>3.0</version.mycila.license.plugin>
 
+    <!-- ===================== -->
+    <!-- Dependencies versions -->
+    <!-- ===================== -->
+    <version.sonar-jacoco-listeners>4.14.0.11784</version.sonar-jacoco-listeners>
+
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL v3</license.name>
     <license.owner>SonarSource SA</license.owner>
@@ -616,7 +621,7 @@
         <dependency>
           <groupId>org.sonarsource.java</groupId>
           <artifactId>sonar-jacoco-listeners</artifactId>
-          <version>3.8</version>
+          <version>${version.sonar-jacoco-listeners}</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
