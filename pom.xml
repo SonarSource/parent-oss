@@ -525,9 +525,11 @@
           </mapping>
           <includes>
             <include>src/*/java/**/*.java</include>
-            <include>src/*/js/**/*.js</include>
-            <include>src/*/css/**/*.css</include>
-            <include>src/*/less/**/*.less</include>
+            <include>src/**/*.js</include>
+            <include>src/**/*.ts</include>
+            <include>src/**/*.tsx</include>
+            <include>src/**/*.css</include>
+            <include>src/**/*.less</include>
           </includes>
         </configuration>
         <executions>
