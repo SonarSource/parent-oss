@@ -520,6 +520,8 @@
           <mapping>
             <java>SLASHSTAR_STYLE</java>
             <js>SLASHSTAR_STYLE</js>
+            <ts>SLASHSTAR_STYLE</ts>
+            <tsx>SLASHSTAR_STYLE</tsx>
             <css>SLASHSTAR_STYLE</css>
             <less>SLASHSTAR_STYLE</less>
           </mapping>
