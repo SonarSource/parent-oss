@@ -533,6 +533,9 @@
             <include>src/**/*.css</include>
             <include>src/**/*.less</include>
           </includes>
+          <excludes>
+            <exclude>src/test/resources/**</exclude>
+          </excludes>
         </configuration>
         <executions>
           <execution>
