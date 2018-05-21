@@ -229,6 +229,8 @@
           <artifactId>license-maven-plugin</artifactId>
           <version>${version.codehaus.license.plugin}</version>
           <configuration>
+            <failOnBlacklist>true</failOnBlacklist>
+            <failOnMissing>true</failOnMissing>
             <includedScopes>compile</includedScopes>
             <excludedLicenses>AGPL 3|GPL 2|GPL 3</excludedLicenses>
             <licenseMerges>
