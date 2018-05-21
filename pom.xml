@@ -134,7 +134,7 @@
     <version.sonar-packaging.plugin>1.18.0.372</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
 
-    <version.codehaus.license.plugin>1.14</version.codehaus.license.plugin>
+    <version.codehaus.license.plugin>1.16</version.codehaus.license.plugin>
     <version.mycila.license.plugin>3.0</version.mycila.license.plugin>
 
     <!-- ===================== -->
