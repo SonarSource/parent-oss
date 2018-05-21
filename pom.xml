@@ -232,21 +232,27 @@
             <failOnBlacklist>true</failOnBlacklist>
             <failOnMissing>true</failOnMissing>
             <includedScopes>compile</includedScopes>
-            <excludedLicenses>AGPL 3|GPL 2|GPL 3</excludedLicenses>
+            <includedLicenses>apache_v2|bouncy_castle|bsd|cddl_gpl|cddl_v1|epl_v1|h2|jaxen|lgpl_v2_1|lgpl_v3|mit|public_domain|tmate</includedLicenses>
             <licenseMerges>
               <!-- keep values on a single line -->
-              <licenseMerge>Apache 2|Apache 2.0|Apache Public License 2.0|The Apache Software License, Version 2.0|Apache License, Version 2.0|Apache Software Licenses|apache_v2</licenseMerge>
-              <licenseMerge>CDDL 1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0|Common Development and Distribution License (CDDL) v1.0|cddl_v1</licenseMerge>
-              <licenseMerge>LGPL 2.1|GNU LGPL 2.1|GNU Lesser General Public License (LGPL), Version 2.1|GNU Lesser General Public License, version 2.1|lgpl_v2_1</licenseMerge>
-              <licenseMerge>LGPL 3|GNU LGPL 3|GNU LESSER GENERAL PUBLIC LICENSE, Version 3|GNU Lesser General Public Licence|GNU Lesser General Public License|GNU LESSER GENERAL PUBLIC LICENSE|lgpl_v3</licenseMerge>
-              <licenseMerge>Dual license: CDDL 1.0 and GPL v2|Dual license consisting of the CDDL v1.0 and GPL v2|CDDL+GPLv2|CDDL+GPL|CDDL+GPL License</licenseMerge>
-              <licenseMerge>Dual license: CDDL 1.1 and GPL v2|Dual license consisting of the CDDL v1.1 and GPL v2|CDDL1_1+GPLv2</licenseMerge>
-              <licenseMerge>Dual License: CDDL 1.0 and GPL V2 with Classpath Exception|CDDL + GPLv2 with classpath exception</licenseMerge>
-              <licenseMerge>EPL 1.0|Eclipse Public License 1.0|Eclipse Public License - v 1.0|Eclipse Public License, Version 1.0|EPL|epl_v1</licenseMerge>
-              <licenseMerge>MIT|MIT License|The MIT License|mit</licenseMerge>
-              <licenseMerge>GPL 2|GNU General Public License (GPL) version 2.0|GPL 2.0|gpl_v2</licenseMerge>
-              <licenseMerge>GPL 3|GNU General Public License (GPL) version 3.0|GPL 3.0|gpl_v3</licenseMerge>
-              <licenseMerge>AGPL 3|GNU Affero General Public License (AGPL) version 3.0|AGPL 3.0|agpl_v3</licenseMerge>
+              <licenseMerge>agpl_v3|AGPL 3|GNU Affero General Public License (AGPL) version 3.0|AGPL 3.0</licenseMerge>
+              <licenseMerge>apache_v2|Apache 2|Apache 2.0|Apache Public License 2.0|The Apache Software License, Version 2.0|Apache License, Version 2.0|Apache License, version 2.0|Apache Software Licenses|Apache License Version 2.0|ASF 2.0|ASL, version 2</licenseMerge>
+              <licenseMerge>bouncy_castle|Bouncy Castle Licence</licenseMerge>
+              <licenseMerge>bsd|BSD|BSD License|The BSD License|3-Clause BSD License|The BSD 3-Clause License|New BSD License|New BSD license|BSD 3-Clause|BSD-style license|Trilead Library License (BSD-Like)|Revised BSD|BSD style</licenseMerge>
+              <licenseMerge>cddl_gpl|Dual license: CDDL 1.0 and GPL v2|Dual license consisting of the CDDL v1.0 and GPL v2|CDDL+GPLv2|CDDL+GPL|CDDL+GPL License|Dual license: CDDL 1.1 and GPL v2|Dual license consisting of the CDDL v1.1 and GPL v2|CDDL1_1+GPLv2|Dual License: CDDL 1.0 and GPL V2 with Classpath Exception|CDDL + GPLv2 with classpath exception|CDDL/GPLv2+CE</licenseMerge>
+              <licenseMerge>cddl_v1|CDDL|CDDL 1.0|CDDL 1.1|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0|Common Development and Distribution License (CDDL) v1.0</licenseMerge>
+              <licenseMerge>epl_v1|EPL 1.0|Eclipse Public License 1.0|Eclipse Public License - v 1.0|Eclipse Public License, Version 1.0|Eclipse Public License v1.0|EPL</licenseMerge>
+              <licenseMerge>gpl_v2|GPL 2|GNU General Public License (GPL) version 2.0|GPL 2.0|GNU General Public License (GPL)</licenseMerge>
+              <licenseMerge>gpl_v3|GPL 3|GNU General Public License (GPL) version 3.0|GNU General Public License, Version 3|GPL 3.0</licenseMerge>
+              <licenseMerge>h2|The H2 License, Version 1.0</licenseMerge>
+              <licenseMerge>jaxen|http://jaxen.codehaus.org/license.html|Jaxen</licenseMerge>
+              <licenseMerge>lgpl_v2|LGPL 2.0|GNU LGPL 2.0|GNU Lesser General Public License (LGPL), Version 2.0|GNU Lesser General Public License, version 2.0</licenseMerge>
+              <licenseMerge>lgpl_v2_1|LGPL 2.1|GNU LGPL 2.1|GNU Lesser General Public License (LGPL), Version 2.1|GNU Lesser General Public License, version 2.1|LGPL, version 2.1</licenseMerge>
+              <licenseMerge>lgpl_v3|LGPL 3|GNU LGPL 3|GNU LGPL v3|LGPL v.3|GNU LESSER GENERAL PUBLIC LICENSE, Version 3|GNU Lesser General Public Licence|GNU Lesser General Public License|GNU LESSER GENERAL PUBLIC LICENSE</licenseMerge>
+              <licenseMerge>mit|MIT|MIT License|The MIT License|The MIT license</licenseMerge>
+              <licenseMerge>public_domain|Public Domain|Public Domain, per Creative Commons CC0|Common Public License Version 1.0</licenseMerge>
+              <licenseMerge>sonarsource|SonarSource|Commercial</licenseMerge>
+              <licenseMerge>tmate|TMate Open Source License</licenseMerge>
             </licenseMerges>
           </configuration>
         </plugin>
