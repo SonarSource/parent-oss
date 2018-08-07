@@ -122,7 +122,7 @@
     <version.resources.plugin>3.0.2</version.resources.plugin>
     <version.shade.plugin>3.1.0</version.shade.plugin>
     <version.source.plugin>3.0.1</version.source.plugin>
-    <version.surefire.plugin>2.20.1</version.surefire.plugin>
+    <version.surefire.plugin>2.22.0</version.surefire.plugin>
     <version.site.plugin>3.7</version.site.plugin>
     <version.artifactory.plugin>2.6.1</version.artifactory.plugin>
 
