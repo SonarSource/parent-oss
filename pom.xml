@@ -249,7 +249,7 @@
               <licenseMerge>lgpl_v2|LGPL 2.0|GNU LGPL 2.0|GNU Lesser General Public License (LGPL), Version 2.0|GNU Lesser General Public License, version 2.0</licenseMerge>
               <licenseMerge>lgpl_v2_1|LGPL 2.1|GNU LGPL 2.1|GNU Lesser General Public License (LGPL), Version 2.1|GNU Lesser General Public License, version 2.1|LGPL, version 2.1</licenseMerge>
               <licenseMerge>lgpl_v3|LGPL 3|GNU LGPL 3|GNU LGPL v3|LGPL v.3|GNU LESSER GENERAL PUBLIC LICENSE, Version 3|GNU Lesser General Public Licence|GNU Lesser General Public License|GNU LESSER GENERAL PUBLIC LICENSE</licenseMerge>
-              <licenseMerge>mit|MIT|MIT License|The MIT License|The MIT license</licenseMerge>
+              <licenseMerge>mit|MIT|MIT License|MIT license|The MIT License|The MIT license</licenseMerge>
               <licenseMerge>public_domain|Public Domain|Public Domain, per Creative Commons CC0|Common Public License Version 1.0</licenseMerge>
               <licenseMerge>sonarsource|SonarSource|Commercial</licenseMerge>
               <licenseMerge>tmate|TMate Open Source License</licenseMerge>
