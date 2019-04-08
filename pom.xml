@@ -125,6 +125,7 @@
     <version.source.plugin>3.0.1</version.source.plugin>
     <version.site.plugin>3.7</version.site.plugin>
     <version.artifactory.plugin>2.6.1</version.artifactory.plugin>
+    <version.jacoco.plugin>0.8.3</version.jacoco.plugin>
 
     <version.animal-sniffer.plugin>1.14</version.animal-sniffer.plugin>
     <version.buildnumber.plugin>1.4</version.buildnumber.plugin>
@@ -727,6 +728,31 @@
         </plugins>
       </build>
     </profile>
-
+    <profile>
+      <id>coverage</id>
+      <build>
+        <plugins>
+          <plugin>
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maven-plugin</artifactId>
+              <version>${version.jacoco.plugin}</version>
+              <executions>
+                <execution>
+                  <id>prepare-agent</id>
+                  <goals>
+                    <goal>prepare-agent</goal>
+                  </goals>
+                </execution>
+                <execution>
+                  <id>report</id>
+                  <goals>
+                    <goal>report</goal>
+                  </goals>
+                </execution>
+              </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 </project>
