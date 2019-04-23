@@ -118,7 +118,7 @@
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
     <version.jar.plugin>3.0.2</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
-    <version.javadoc.plugin>3.0.0-M1</version.javadoc.plugin>
+    <version.javadoc.plugin>3.1.0</version.javadoc.plugin>
     <version.plugin.plugin>3.5</version.plugin.plugin>
     <version.resources.plugin>3.0.2</version.resources.plugin>
     <version.shade.plugin>3.1.0</version.shade.plugin>
