@@ -9,7 +9,6 @@ function installTravisTools {
 }
 
 installTravisTools
-. installJDK8
 
 # get current version from pom
 CURRENT_VERSION=`maven_expression "project.version"`
