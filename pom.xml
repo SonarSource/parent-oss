@@ -55,10 +55,8 @@
 
   <mailingLists>
     <mailingList>
-      <name>SonarQue mailing list</name>
-      <subscribe>sonarqube+subscribe@googlegroups.com</subscribe>
-      <unsubscribe>sonarqube+unsubscribe@googlegroups.com</unsubscribe>
-      <post>sonarqube@googlegroups.com</post>
+      <name>SonarSource Community</name>
+      <archive>https://community.sonarsource.com</archive>
     </mailingList>
   </mailingLists>
 
