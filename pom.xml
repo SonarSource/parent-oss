@@ -60,11 +60,6 @@
     </mailingList>
   </mailingLists>
 
-  <prerequisites>
-    <!-- Note that "prerequisites" not inherited, but used by versions-maven-plugin -->
-    <maven>${maven.min.version}</maven>
-  </prerequisites>
-
   <scm>
     <connection>scm:git:https://github.com/SonarSource/parent-oss.git</connection>
     <developerConnection>scm:git:git@github.com:SonarSource/parent-oss.git</developerConnection>
@@ -125,7 +120,6 @@
     <version.artifactory.plugin>2.6.1</version.artifactory.plugin>
     <version.jacoco.plugin>0.8.3</version.jacoco.plugin>
 
-    <version.animal-sniffer.plugin>1.14</version.animal-sniffer.plugin>
     <version.buildnumber.plugin>1.4</version.buildnumber.plugin>
     <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
 
@@ -134,11 +128,6 @@
 
     <version.codehaus.license.plugin>1.16</version.codehaus.license.plugin>
     <version.mycila.license.plugin>3.0</version.mycila.license.plugin>
-
-    <!-- ===================== -->
-    <!-- Dependencies versions -->
-    <!-- ===================== -->
-    <version.sonar-jacoco-listeners>4.14.0.11784</version.sonar-jacoco-listeners>
 
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL v3</license.name>
@@ -282,7 +271,7 @@
           <version>${version.javadoc.plugin}</version>
           <configuration>
             <quiet>true</quiet>
-            <additionalparam>-Xdoclint:none</additionalparam>
+            <doclint>none</doclint>
           </configuration>
         </plugin>
         <plugin>
@@ -364,7 +353,6 @@
         <configuration>
           <source>${jdk.min.version}</source>
           <target>${jdk.min.version}</target>
-          <encoding>${project.build.sourceEncoding}</encoding>
         </configuration>
       </plugin>
 
@@ -439,15 +427,6 @@
                   <banRelease>true</banRelease>
                   <phases>clean,deploy</phases>
                 </requirePluginVersions>
-
-                <bannedDependencies>
-                  <!-- See SONARPLUGINS-506 -->
-                  <message>Animal-sniffer throws exception when icu4j version 2.6.1 used.</message>
-                  <searchTransitive>true</searchTransitive>
-                  <excludes>
-                    <exclude>com.ibm.icu:icu4j:[2.6.1]</exclude>
-                  </excludes>
-                </bannedDependencies>
 
                 <!-- TODO SONARPLUGINS-797
                 <DependencyConvergence />
@@ -583,7 +562,6 @@
         </property>
       </activation>
       <properties>
-        <animal.sniffer.skip>true</animal.sniffer.skip>
         <license.skip>true</license.skip>
         <enforcer.skip>true</enforcer.skip>
       </properties>
