@@ -672,10 +672,10 @@
                     <timeoutSec>60</timeoutSec>
                   </artifactory>
                   <deployProperties>
-                    <vcs.revision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT}}</vcs.revision>
-                    <vcs.branch>{{GIT_BRANCH|TRAVIS_BRANCH|APPVEYOR_REPO_BRANCH}}</vcs.branch>
+                    <vcs.revision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT|BUILD_SOURCEVERSION}}</vcs.revision>
+                    <vcs.branch>{{GIT_BRANCH|TRAVIS_BRANCH|APPVEYOR_REPO_BRANCH|SYSTEM_PULLREQUEST_TARGETBRANCH|BUILD_SOURCEBRANCHNAME}}</vcs.branch>
                     <build.name>${gitRepositoryName}</build.name>
-                    <build.number>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER}}</build.number>
+                    <build.number>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER|BUILD_BUILDID}}</build.number>
                   </deployProperties>
                   <licenses>
                     <autoDiscover>true</autoDiscover>
@@ -685,18 +685,18 @@
                     <violationRecipients>licences-control@sonarsource.com</violationRecipients>
                   </licenses>
                   <publisher>
-                    <contextUrl>${env.ARTIFACTORY_URL}</contextUrl>
-                    <repoKey>${env.ARTIFACTORY_DEPLOY_REPO}</repoKey>
-                    <username>${env.ARTIFACTORY_DEPLOY_USERNAME}</username>
-                    <password>${env.ARTIFACTORY_DEPLOY_PASSWORD}</password>
+                    <contextUrl>{{ARTIFACTORY_URL}}</contextUrl>
+                    <repoKey>{{ARTIFACTORY_DEPLOY_REPO}}</repoKey>
+                    <username>{{ARTIFACTORY_DEPLOY_USERNAME}}</username>
+                    <password>{{ARTIFACTORY_DEPLOY_PASSWORD}}</password>
                     <publishBuildInfo>true</publishBuildInfo>
                     <publishArtifacts>true</publishArtifacts>
                   </publisher>
                   <buildInfo>
                     <buildName>${gitRepositoryName}</buildName>
-                    <buildNumber>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER}}</buildNumber>
+                    <buildNumber>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER|BUILD_BUILDID}}</buildNumber>
                     <buildUrl>{{CI_BUILD_URL|BUILD_URL}}</buildUrl>
-                    <vcsRevision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT}}</vcsRevision>
+                    <vcsRevision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT|BUILD_SOURCEVERSION}}</vcsRevision>
                   </buildInfo>
                 </configuration>
               </execution>
