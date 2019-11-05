@@ -500,6 +500,7 @@
             <include>src/**/*.tsx</include>
             <include>src/**/*.css</include>
             <include>src/**/*.less</include>
+            <include>tests/**/*.test.ts</include>
           </includes>
           <excludes>
             <exclude>src/test/resources/**</exclude>
