@@ -128,6 +128,7 @@
 
     <version.codehaus.license.plugin>2.0.0</version.codehaus.license.plugin>
     <version.mycila.license.plugin>3.0</version.mycila.license.plugin>
+    <version.gpg.plugin>0.3.1</version.gpg.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL v3</license.name>
@@ -323,6 +324,11 @@
           <groupId>com.github.genthaler</groupId>
           <artifactId>beanshell-maven-plugin</artifactId>
           <version>${version.beanshell.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.simplify4u.plugins</groupId>
+          <artifactId>sign-maven-plugin</artifactId>
+          <version>${version.gpg.plugin}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -567,6 +573,30 @@
         <enforcer.skip>true</enforcer.skip>
       </properties>
     </profile>
+    <profile>
+      <id>sign</id>      
+      <build>
+        <plugins>          
+          <plugin>
+            <groupId>org.simplify4u.plugins</groupId>
+            <artifactId>sign-maven-plugin</artifactId>
+            <version>${version.gpg.plugin}</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <configuration>
+                  <keyPass>${env.PGP_PASSPHRASE}</keyPass>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>  
     <!-- This profile is activated when a project is released. -->
     <profile>
       <id>release</id>
