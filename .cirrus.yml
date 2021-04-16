@@ -41,7 +41,7 @@ build_task:
     folder: ${CIRRUS_WORKING_DIR}/.m2/repository 
   build_script:
     - source cirrus-env BUILD
-    - .cirrus/regular_mvn_build_deploy_analyze
+    - regular_mvn_build_deploy_analyze
   cleanup_before_cache_script: cleanup_maven_repository
 
 promote_task:
