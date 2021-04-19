@@ -11,22 +11,24 @@ jobs:
     steps:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v1
+      - name: JFrog config
+        run: jfrog rt config repox --url https://repox.jfrog.io/artifactory/ --apikey $ARTIFACTORY_API_KEY --basic-auth-only
+        env:
+          ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
       - name: Get the version
         id: get_version
         run: |
           IFS=. read major minor build <<< "${{ github.event.release.tag_name }}"
           echo ::set-output name=build::"${build}"
       - name: Promote Artifact
-        id: jfrog
-        env:
-          ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
+        id: jfrog        
         run: |
-          jfrog rt bpr --apikey $ARTIFACTORY_API_KEY --url https://repox.jfrog.io/artifactory --status release parent ${{ steps.get_version.outputs.build }} sonarsource-private-releases 
+          jfrog rt bpr --status release parent ${{ steps.get_version.outputs.build }} sonarsource-public-releases 
 
   maven-central-sync:
     runs-on: ubuntu-latest
     needs:
-      - sonar_release
+      - release
     steps:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v1
