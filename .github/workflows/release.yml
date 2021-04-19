@@ -23,7 +23,7 @@ jobs:
       - name: Promote Artifact
         id: jfrog        
         run: |
-          jfrog rt bpr --status release parent ${{ steps.get_version.outputs.build }} sonarsource-public-releases 
+          jfrog rt bpr --status release parent-oss ${{ steps.get_version.outputs.build }} sonarsource-public-releases 
 
   maven-central-sync:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
       - name: Get the version
         id: get_version
         run: |
-          IFS=. read major minor patch build <<< "${{ github.event.release.tag_name }}"
+          IFS=. read major minor build <<< "${{ github.event.release.tag_name }}"
           echo ::set-output name=build::"${build}"
       - name: Create local repository directory
         id: local_repo
