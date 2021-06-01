@@ -23,7 +23,7 @@ jobs:
       - name: Promote Artifact
         id: jfrog        
         run: |
-          jfrog rt bpr --status release parent-oss ${{ steps.get_version.outputs.build }} sonarsource-public-releases 
+          jfrog rt bpr --status released parent-oss ${{ steps.get_version.outputs.build }} sonarsource-public-releases 
 
   maven-central-sync:
     runs-on: ubuntu-latest
