@@ -762,5 +762,14 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>use-javac-release</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <properties>
+        <maven.compiler.release>${jdk.min.version}</maven.compiler.release>
+      </properties>
+    </profile>
   </profiles>
 </project>
