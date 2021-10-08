@@ -1,4 +1,6 @@
-gcp_credentials: ENCRYPTED[!17c59813193e86cc337bce848b358412b90f50bc5fe1b8b39d363cdf14a41ebe76cfba0482e7f81d076994b9f6dbfb4c!]
+# This credentials was generated following the documentation from this project https://github.com/SonarSource/re-ci-infrastructure/tree/master/release-engineering-ci
+# It is the production cirrus-ci Service Account
+gcp_credentials: ENCRYPTED[!3451936bcb95a55ef5d279c4eb83926d995cc0877c277cc051cc0190ed1ee0e975c1c618b37ceebd24f3ec35057a2def!]
  
 env:
   ARTIFACTORY_URL: ENCRYPTED[!2f8fa307d3289faa0aa6791f18b961627ae44f1ef46b136e1a1e63b0b4c86454dbb25520d49b339e2d50a1e1e5f95c88!]
@@ -16,9 +18,9 @@ env:
   GITHUB_TOKEN: ENCRYPTED[!f272985ea5b49b3cf9c414b98de6a8e9096be47bfcee52f33311ba3131a2af637c1b956f49585b7757dd84b7c030233a!]
 
 container_definition: &CONTAINER_DEFINITION
-  image: gcr.io/language-team/base:latest
-  cluster_name: cirrus-ci-lt-cluster
-  zone: us-central1-a
+  image: eu.gcr.io/release-engineering-ci-prod/base:j11-m3-latest
+  cluster_name: cirrus-ci-prod
+  zone: europe-west4-b
   namespace: default
 
 only_sonarsource_qa: &ONLY_SONARSOURCE_QA
