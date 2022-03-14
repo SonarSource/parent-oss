@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@686845529f661c9afbbee4547baa1f6d2d7ce5e0 # tag=v1
+        uses: jfrog/setup-jfrog-cli@48d7925d2c5cc5045aa90f855f398b061dcf64ee # tag=v2
       - name: JFrog config
         run: jfrog rt config repox --url https://repox.jfrog.io/artifactory/ --apikey $ARTIFACTORY_API_KEY --basic-auth-only
         env:
@@ -31,7 +31,7 @@ jobs:
       - release
     steps:
       - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@686845529f661c9afbbee4547baa1f6d2d7ce5e0 # tag=v1
+        uses: jfrog/setup-jfrog-cli@48d7925d2c5cc5045aa90f855f398b061dcf64ee # tag=v2
       - name: JFrog config
         run: jfrog rt config repox --url https://repox.jfrog.io/artifactory/ --apikey $ARTIFACTORY_API_KEY --basic-auth-only
         env:
