@@ -109,7 +109,7 @@
     <version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>
     <version.install.plugin>3.0.0-M1</version.install.plugin>
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
-    <version.jar.plugin>3.1.2</version.jar.plugin>
+    <version.jar.plugin>3.2.2</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
     <version.javadoc.plugin>3.1.0</version.javadoc.plugin>
     <version.plugin.plugin>3.6.0</version.plugin.plugin>
