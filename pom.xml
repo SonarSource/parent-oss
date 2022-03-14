@@ -112,7 +112,7 @@
     <version.jar.plugin>3.1.2</version.jar.plugin>
     <version.jarjar.plugin>1.9</version.jarjar.plugin>
     <version.javadoc.plugin>3.1.0</version.javadoc.plugin>
-    <version.plugin.plugin>3.6.0</version.plugin.plugin>
+    <version.plugin.plugin>3.6.4</version.plugin.plugin>
     <version.resources.plugin>3.1.0</version.resources.plugin>
     <version.shade.plugin>3.2.1</version.shade.plugin>
     <version.source.plugin>3.1.0</version.source.plugin>
