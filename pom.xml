@@ -71,22 +71,10 @@
     <url>http://jira.sonarsource.com</url>
   </issueManagement>
   <ciManagement>
-    <system>travis-ci</system>
-    <url>https://travis-ci.org/SonarSource/</url>
+    <system>cirrus-ci</system>
+    <url>https://cirrus-ci.com/github/SonarSource/</url>
   </ciManagement>
-  <distributionManagement>
-    <repository>
-      <id>bintray</id>
-      <url>https://api.bintray.com/maven/sonarsource/SonarQube/${project.groupId}/;publish=1</url>
-    </repository>
-    <snapshotRepository>
-      <id>${sonar.snapshotRepository.id}</id>
-      <name>Sonar plugins snapshot repository</name>
-      <uniqueVersion>false</uniqueVersion>
-      <url>${sonar.snapshotRepository.url}</url>
-    </snapshotRepository>
-  </distributionManagement>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>3.3.9</maven.min.version>
