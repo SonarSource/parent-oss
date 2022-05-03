@@ -12,7 +12,7 @@ jobs:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@128e747d1ab49209bace59204fee2ddb98fd05b1 # tag=v2.3.0
         env:
-          JF_ARTIFACTORY_1: ${{ secrets.REPOX_CLI_CONFIG_BUILD_PROMOTER }}
+          JF_ARTIFACTORY_1: ${{ secrets.REPOX_CLI_CONFIG_BUILD_PROMOTER_RE }}
       - name: Get the version
         id: get_version
         run: |
