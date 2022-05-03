@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@48d7925d2c5cc5045aa90f855f398b061dcf64ee # tag=v2
+        uses: jfrog/setup-jfrog-cli@128e747d1ab49209bace59204fee2ddb98fd05b1 # tag=v2
         env:
           JF_ARTIFACTORY_1: ${{ secrets.REPOX_CLI_CONFIG_BUILD_PROMOTER }}
       - name: Get the version
@@ -29,7 +29,7 @@ jobs:
       - release
     steps:
       - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@48d7925d2c5cc5045aa90f855f398b061dcf64ee # tag=v2
+        uses: jfrog/setup-jfrog-cli@128e747d1ab49209bace59204fee2ddb98fd05b1 # tag=v2
         env:
           JF_ARTIFACTORY_1: ${{ secrets.REPOX_CLI_CONFIG_PUBLIC_READER }}
       - name: Get the version
