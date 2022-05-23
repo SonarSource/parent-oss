@@ -41,14 +41,14 @@ jobs:
         id: local_repo
         run: echo ::set-output name=dir::"$(mktemp -d repo.XXXXXXXX)"
       - name: Download Artifacts
-        uses: SonarSource/gh-action_release/download-build@8dacebea73541ce94431c1ce07924798d97ee987 # tag=4.2.5
+        uses: SonarSource/gh-action_release/download-build@e9c6a6497a596affde9b8a0f6c177a60ca727f58 # tag=4.2.6
         with:
           build-number: ${{ steps.get_version.outputs.build }}
           local-repo-dir: ${{ steps.local_repo.outputs.dir }}
       - name: Maven Central Sync
         id: maven-central-sync
         continue-on-error: true
-        uses: SonarSource/gh-action_release/maven-central-sync@8dacebea73541ce94431c1ce07924798d97ee987 # tag=4.2.5
+        uses: SonarSource/gh-action_release/maven-central-sync@e9c6a6497a596affde9b8a0f6c177a60ca727f58 # tag=4.2.6
         with:
           local-repo-dir: ${{ steps.local_repo.outputs.dir }}
         env:
