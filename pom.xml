@@ -78,7 +78,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>3.3.9</maven.min.version>
-    <jdk.min.version>1.8</jdk.min.version>
+    <jdk.min.version>8</jdk.min.version>
     <timestamp>${maven.build.timestamp}</timestamp>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <sonar.snapshotRepository.id>snapshot</sonar.snapshotRepository.id>
@@ -702,9 +702,19 @@
                 </goals>
                 <configuration>
                   <artifactory>
-                    <envVarsExcludePatterns>
-                      *pass*,*psw*,*secret*,*MAVEN_CMD_LINE_ARGS*,sun.java.command,*token*,*login*,*key*,*signing*,*auth*,*pwd*
-                    </envVarsExcludePatterns>
+                    <envVarsIncludePatterns>
+                      GIT_SHA1,
+                      GITHUB_BRANCH,
+                      ARTIFACTS_TO_PUBLISH,
+                      *_VERSION,
+                      JAVA,
+                      CIRRUS_CHANGE_MESSAGE,
+                      PROJECT,
+                      ARTIFACTORY_DEPLOY_REPO,
+                      ARTIFACTORY_DEPLOY_USERNAME,
+                      ARTIFACTORY_PRIVATE_USERNAME,
+                      BUILD_NUMBER
+                    </envVarsIncludePatterns>
                     <includeEnvVars>true</includeEnvVars>
                     <timeoutSec>60</timeoutSec>
                   </artifactory>
