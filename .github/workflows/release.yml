@@ -1,5 +1,7 @@
-
-name: release
+---
+name: sonar-release
+# This workflow is triggered when publishing a new github release
+# yamllint disable-line rule:truthy
 on:
   release:
     types:
@@ -7,59 +9,10 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@11ee3f9bb82595485cb55670e4f93885080e183b # tag=v2.4.1
-        env:
-          JF_ARTIFACTORY_1: ${{ secrets.REPOX_CLI_CONFIG_BUILD_PROMOTER_RE }}
-      - name: Get the version
-        id: get_version
-        run: |
-          IFS=. read major minor build <<< "${{ github.event.release.tag_name }}"
-          echo ::set-output name=build::"${build}"
-      - name: Promote Artifact
-        id: jfrog
-        run: |
-          jfrog rt bpr --status released parent-oss ${{ steps.get_version.outputs.build }} sonarsource-public-releases
-
-  maven-central-sync:
-    runs-on: ubuntu-latest
-    needs:
-      - release
-    steps:
-      - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@11ee3f9bb82595485cb55670e4f93885080e183b # tag=v2.4.1
-        env:
-          JF_ARTIFACTORY_1: ${{ secrets.REPOX_CLI_CONFIG_PUBLIC_READER }}
-      - name: Get the version
-        id: get_version
-        run: |
-          IFS=. read major minor build <<< "${{ github.event.release.tag_name }}"
-          echo ::set-output name=build::"${build}"
-      - name: Create local repository directory
-        id: local_repo
-        run: echo ::set-output name=dir::"$(mktemp -d repo.XXXXXXXX)"
-      - name: Download Artifacts
-        uses: SonarSource/gh-action_release/download-build@e9c6a6497a596affde9b8a0f6c177a60ca727f58 # tag=4.2.6
-        with:
-          build-number: ${{ steps.get_version.outputs.build }}
-          local-repo-dir: ${{ steps.local_repo.outputs.dir }}
-      - name: Maven Central Sync
-        id: maven-central-sync
-        continue-on-error: true
-        uses: SonarSource/gh-action_release/maven-central-sync@e9c6a6497a596affde9b8a0f6c177a60ca727f58 # tag=4.2.6
-        with:
-          local-repo-dir: ${{ steps.local_repo.outputs.dir }}
-        env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-      - name: Notify on failure
-        if: ${{ failure() || steps.maven-central-sync.outcome == 'failure' }}
-        uses: 8398a7/action-slack@22048831299719d772f51719ca7384e34b4cc61d # tag=v3.13.2
-        with:
-          text: 'Maven sync failed'
-          status: failure
-          fields: repo,author,eventName
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BUILD_WEBHOOK }}
+    permissions:
+      id-token: write
+      contents: write
+    uses: SonarSource/gh-action_release/.github/workflows/main.yaml@v5
+    with:
+      publishToBinaries: true
+      mavenCentralSync: true
