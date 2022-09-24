@@ -56,7 +56,7 @@ jobs:
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
       - name: Notify on failure
         if: ${{ failure() || steps.maven-central-sync.outcome == 'failure' }}
-        uses: 8398a7/action-slack@22048831299719d772f51719ca7384e34b4cc61d # tag=v3.13.2
+        uses: 8398a7/action-slack@a189acbf0b7ea434558662ae25a0de71df69a435 # tag=v3.14.0
         with:
           text: 'Maven sync failed'
           status: failure
