@@ -74,7 +74,7 @@
     <system>cirrus-ci</system>
     <url>https://cirrus-ci.com/github/SonarSource/</url>
   </ciManagement>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>3.3.9</maven.min.version>
@@ -580,9 +580,9 @@
       </properties>
     </profile>
     <profile>
-      <id>sign</id>      
+      <id>sign</id>
       <build>
-        <plugins>          
+        <plugins>
           <plugin>
             <groupId>org.simplify4u.plugins</groupId>
             <artifactId>sign-maven-plugin</artifactId>
@@ -602,7 +602,7 @@
           </plugin>
         </plugins>
       </build>
-    </profile>  
+    </profile>
     <!-- This profile is activated when a project is released. -->
     <profile>
       <id>release</id>
