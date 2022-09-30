@@ -1,0 +1,31 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+---
+repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3298ddab3c13dd77d6ce1fc0baf97691430d84b0  # frozen: v4.3.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: [--unsafe]  # does not support https://yaml.org/type/merge.html
+      - id: check-xml
+      - id: check-added-large-files
+  - repo: https://github.com/adrienverge/yamllint
+    rev: 9cce2940414e9560ae4c8518ddaee2ac1863a4d2  # frozen: v1.28.0
+    hooks:
+      - id: yamllint
+        args: [-d, "{extends: default, rules: {line-length: {max: 130}}}"]
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: 4089e11ea61317283a50455ff73afe895b9d8b2d  # frozen: v0.11.0
+    hooks:
+      - id: markdownlint
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 9ff55b0adf11b603e0e2b4e1d639255278f4316f  # frozen: 0.18.3
+    hooks:
+      - id: check-github-workflows
+      - id: check-renovate

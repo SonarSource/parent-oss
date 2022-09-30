@@ -19,9 +19,9 @@ jobs:
           IFS=. read major minor build <<< "${{ github.event.release.tag_name }}"
           echo ::set-output name=build::"${build}"
       - name: Promote Artifact
-        id: jfrog        
+        id: jfrog
         run: |
-          jfrog rt bpr --status released parent-oss ${{ steps.get_version.outputs.build }} sonarsource-public-releases 
+          jfrog rt bpr --status released parent-oss ${{ steps.get_version.outputs.build }} sonarsource-public-releases
 
   maven-central-sync:
     runs-on: ubuntu-latest

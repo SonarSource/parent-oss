@@ -1,5 +1,5 @@
 gcp_credentials: ENCRYPTED[!149d4005ecdba4cdd78bb5ba22756ebb98bf8e3367ee2e9ab08c5a1608c0d3e3b501904b67a1d67c0b63085e469d7dde!]
- 
+
 env:
   ARTIFACTORY_URL: ENCRYPTED[!2f8fa307d3289faa0aa6791f18b961627ae44f1ef46b136e1a1e63b0b4c86454dbb25520d49b339e2d50a1e1e5f95c88!]
   ARTIFACTORY_PRIVATE_USERNAME: repox-private-reader-re-ef42e7
@@ -24,6 +24,10 @@ container_definition: &CONTAINER_DEFINITION
 only_sonarsource_qa: &ONLY_SONARSOURCE_QA
   only_if: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_TAG == "" && ($CIRRUS_PR != "" || $CIRRUS_BRANCH == 'master' || $CIRRUS_BRANCH =~ "branch-.*" || $CIRRUS_BRANCH =~ "dogfood-on-.*" || $CIRRUS_BUILD_SOURCE == 'api' )
 
+vault: &VAULT
+  vault_script:
+    - vault.sh
+
 build_task:
   <<: *ONLY_SONARSOURCE_QA
   gke_container:
@@ -41,7 +45,7 @@ build_task:
     DEPLOY_PULL_REQUEST: true
     CIRRUS_CLONE_DEPTH: 50
   maven_cache:
-    folder: ${CIRRUS_WORKING_DIR}/.m2/repository 
+    folder: ${CIRRUS_WORKING_DIR}/.m2/repository
   build_script:
     - source cirrus-env BUILD
     - regular_mvn_build_deploy_analyze
