@@ -14,5 +14,5 @@ jobs:
       contents: write
     uses: SonarSource/gh-action_release/.github/workflows/main.yaml@7dfe645d96d0a3bd5bcd6d43c1879ed753bc348d  # tag=5.0.0
     with:
-      publishToBinaries: true
+      publishToBinaries: false
       mavenCentralSync: true
