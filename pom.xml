@@ -117,7 +117,7 @@
     <version.codehaus.license.plugin>2.0.0</version.codehaus.license.plugin>
     <version.mycila.license.plugin>3.0</version.mycila.license.plugin>
     <version.gpg.plugin>0.3.1</version.gpg.plugin>
-    <version.cyclonedx.plugin>2.6.0</version.cyclonedx.plugin>
+    <version.cyclonedx.plugin>2.7.4</version.cyclonedx.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL v3</license.name>
