@@ -79,6 +79,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.min.version>3.3.9</maven.min.version>
     <jdk.min.version>8</jdk.min.version>
+    <enforcer.jdk.min.version>1.${jdk.min.version}</enforcer.jdk.min.version>
     <timestamp>${maven.build.timestamp}</timestamp>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <sonar.snapshotRepository.id>snapshot</sonar.snapshotRepository.id>
@@ -383,8 +384,10 @@
           <execution>
             <id>enforce</id>
             <goals>
+              <goal>display-info</goal>
               <goal>enforce</goal>
             </goals>
+            <phase>validate</phase>
             <configuration>
               <rules>
                 <requireProperty>
@@ -424,9 +427,9 @@
                 </requireMavenVersion>
 
                 <requireJavaVersion>
-                  <message>To build this project JDK ${jdk.min.version} (or upper) is required. Please install it.
+                  <message>To build this project JDK ${enforcer.jdk.min.version} (or upper) is required. Please install it.
                   </message>
-                  <version>${jdk.min.version}</version>
+                  <version>${enforcer.jdk.min.version}</version>
                 </requireJavaVersion>
 
                 <requirePluginVersions>
