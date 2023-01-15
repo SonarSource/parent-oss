@@ -219,7 +219,7 @@
               <licenseMerge>cddl_gpl|Dual license: CDDL 1.0 and GPL v2|Dual license consisting of the CDDL v1.0 and GPL v2|CDDL+GPLv2|CDDL+GPL|CDDL+GPL License|Dual license: CDDL 1.1 and GPL v2|Dual license consisting of the CDDL v1.1 and GPL v2|CDDL1_1+GPLv2|Dual License: CDDL 1.0 and GPL V2 with Classpath Exception|CDDL + GPLv2 with classpath exception|CDDL/GPLv2+CE</licenseMerge>
               <licenseMerge>cddl_v1|CDDL|CDDL 1.0|CDDL 1.1|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0|Common Development and Distribution License (CDDL) v1.0</licenseMerge>
               <licenseMerge>epl_v1|EPL 1.0|Eclipse Public License 1.0|Eclipse Public License - v 1.0|Eclipse Public License, Version 1.0|Eclipse Public License v1.0|EPL</licenseMerge>
-              <licenseMerge>epl_v2|Eclipse Public License - v 2.0</licenseMerge>
+              <licenseMerge>epl_v2|Eclipse Public License - v 2.0|Eclipse Public License v2.0</licenseMerge>
               <licenseMerge>gpl_v2|GPL 2|GNU General Public License (GPL) version 2.0|GPL 2.0|GNU General Public License (GPL)|GNU General Public Library</licenseMerge>
               <licenseMerge>gpl_v2_cpe|GPL2 w/ CPE</licenseMerge>
               <licenseMerge>gpl_v3|GPL 3|GNU General Public License (GPL) version 3.0|GNU General Public License, Version 3|GPL 3.0</licenseMerge>
