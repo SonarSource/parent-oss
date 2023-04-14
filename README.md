@@ -6,4 +6,5 @@ Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.g
 
 ### Releasing
 
-After the build artifacts get promoted to the releases repository on repox, there is a manual step of uploading the artifacts to Maven Central.
+After the build artifacts get promoted to the releases repository on repox, 
+they get automatically uploaded to Maven Central.

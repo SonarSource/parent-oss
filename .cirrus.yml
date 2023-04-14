@@ -1,9 +1,20 @@
 env:
-  ARTIFACTORY_PRIVATE_USERNAME: vault-sonarsource-parent-oss-private-reader
-  ARTIFACTORY_DEPLOY_USERNAME: vault-sonarsource-parent-oss-qa-deployer
-  # Possible values for ARTIFACTORY_DEPLOY_REPO: sonarsource-private-qa, sonarsource-public-qa
+  ARTIFACTORY_URL: VAULT[development/kv/data/repox data.url]
+  ARTIFACTORY_PRIVATE_USERNAME: vault-${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-private-reader
+  ARTIFACTORY_DEPLOY_USERNAME: vault-${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-qa-deployer  # Possible values for ARTIFACTORY_DEPLOY_REPO: sonarsource-private-qa, sonarsource-public-qa
+  ARTIFACTORY_DEPLOY_PASSWORD: VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-qa-deployer access_token]
   ARTIFACTORY_DEPLOY_REPO: sonarsource-public-qa
-  ARTIFACTORY_API_KEY: ENCRYPTED[!53f27f70135e2248b0b371dab726b209733c33adeef00a345f7ddae24108b22caca6e498de8843d4252a3671813ce371!]
+  ARTIFACTORY_ACCESS_TOKEN: VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-private-reader access_token]
+
+  # burgr notification
+  BURGR_URL: VAULT[development/kv/data/burgr data.url]
+  BURGR_USERNAME: VAULT[development/kv/data/burgr data.cirrus_username]
+  BURGR_PASSWORD: VAULT[development/kv/data/burgr data.cirrus_password]
+
+  # Use bash (instead of sh on linux or cmd.exe on windows)
+  CIRRUS_SHELL: bash
+  # Allows to run builds for the 50 last commits in a branch:
+  CIRRUS_CLONE_DEPTH: 50
 
 container_definition: &CONTAINER_DEFINITION
   image: ${CIRRUS_AWS_ACCOUNT}.dkr.ecr.eu-central-1.amazonaws.com/base:j11-latest
@@ -22,10 +33,6 @@ only_sonarsource_qa: &ONLY_SONARSOURCE_QA
     || $CIRRUS_BUILD_SOURCE == 'api' 
     )
 
-vault: &VAULT
-  vault_script:
-    - vault.sh
-
 build_task:
   <<: *ONLY_SONARSOURCE_QA
   eks_container:
@@ -34,11 +41,12 @@ build_task:
     memory: 2G
   env:
     # analysis on next
-    SONAR_HOST_URL: https://next.sonarqube.com/sonarqube
+    SONAR_TOKEN: VAULT[development/kv/data/next data.token]
+    SONAR_HOST_URL: VAULT[development/kv/data/next data.url]
     # allow deployment of pull request artifacts to repox
     DEPLOY_PULL_REQUEST: true
-    CIRRUS_CLONE_DEPTH: 50
-  <<: *VAULT
+    SIGN_KEY: VAULT[development/kv/data/sign data.key]
+    PGP_PASSPHRASE: VAULT[development/kv/data/sign data.passphrase]
   maven_cache:
     folder: ${CIRRUS_WORKING_DIR}/.m2/repository
   build_script:
@@ -55,9 +63,12 @@ promote_task:
     cpu: 1
     memory: 1G
   env:
+    #promotion cloud function
+    GCF_ACCESS_TOKEN: VAULT[development/kv/data/promote data.token]
+    PROMOTE_URL: VAULT[development/kv/data/promote data.url]
+    GITHUB_TOKEN: VAULT[development/github/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-promotion token]
     # artifacts that will have downloadable links in burgr
     ARTIFACTS: org.sonarsource.parent:parent:pom
-  <<: *VAULT
   maven_cache:
     folder: ${CIRRUS_WORKING_DIR}/.m2/repository
   script: cirrus_promote_maven
