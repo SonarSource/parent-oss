@@ -115,7 +115,7 @@
 
     <version.codehaus.license.plugin>2.2.0</version.codehaus.license.plugin>
     <version.mycila.license.plugin>4.2</version.mycila.license.plugin>
-    <version.gpg.plugin>3.1.0</version.gpg.plugin>
+    <version.sign.plugin>1.0.1</version.sign.plugin>
     <version.cyclonedx.plugin>2.7.9</version.cyclonedx.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
@@ -292,7 +292,7 @@
         <plugin>
           <groupId>org.simplify4u.plugins</groupId>
           <artifactId>sign-maven-plugin</artifactId>
-          <version>${version.gpg.plugin}</version>
+	  <version>${version.sign.plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.cyclonedx</groupId>
@@ -561,7 +561,7 @@
           <plugin>
             <groupId>org.simplify4u.plugins</groupId>
             <artifactId>sign-maven-plugin</artifactId>
-            <version>${version.gpg.plugin}</version>
+            <version>${version.sign.plugin}</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
