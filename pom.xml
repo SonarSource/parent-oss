@@ -87,37 +87,36 @@
     <!-- ================ -->
     <!-- Plugins versions -->
     <!-- ================ -->
-    <version.assembly.plugin>3.1.1</version.assembly.plugin>
-    <version.clean.plugin>3.2.0</version.clean.plugin>
-    <version.compiler.plugin>3.8.1</version.compiler.plugin>
-    <version.dependency.plugin>3.1.1</version.dependency.plugin>
-    <version.deploy.plugin>3.0.0-M1</version.deploy.plugin>
-    <version.enforcer.plugin>3.1.0</version.enforcer.plugin>
-    <version.surefire.plugin>2.22.2</version.surefire.plugin>
+    <version.assembly.plugin>3.6.0</version.assembly.plugin>
+    <version.clean.plugin>3.3.1</version.clean.plugin>
+    <version.compiler.plugin>3.11.0</version.compiler.plugin>
+    <version.dependency.plugin>3.6.0</version.dependency.plugin>
+    <version.deploy.plugin>3.1.1</version.deploy.plugin>
+    <version.enforcer.plugin>3.3.0</version.enforcer.plugin>
+    <version.surefire.plugin>3.1.2</version.surefire.plugin>
     <version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>
-    <version.install.plugin>3.0.0-M1</version.install.plugin>
+    <version.install.plugin>3.1.1</version.install.plugin>
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
-    <version.jar.plugin>3.1.2</version.jar.plugin>
-    <version.jarjar.plugin>1.9</version.jarjar.plugin>
-    <version.javadoc.plugin>3.1.0</version.javadoc.plugin>
-    <version.plugin.plugin>3.6.0</version.plugin.plugin>
-    <version.resources.plugin>3.1.0</version.resources.plugin>
-    <version.shade.plugin>3.2.1</version.shade.plugin>
-    <version.source.plugin>3.1.0</version.source.plugin>
+    <version.jar.plugin>3.3.0</version.jar.plugin>
+    <version.javadoc.plugin>3.5.0</version.javadoc.plugin>
+    <version.plugin.plugin>3.9.0</version.plugin.plugin>
+    <version.resources.plugin>3.3.1</version.resources.plugin>
+    <version.shade.plugin>3.5.0</version.shade.plugin>
+    <version.source.plugin>3.3.0</version.source.plugin>
     <version.site.plugin>3.7.1</version.site.plugin>
     <version.artifactory.plugin>3.4.0</version.artifactory.plugin>
-    <version.jacoco.plugin>0.8.8</version.jacoco.plugin>
+    <version.jacoco.plugin>0.8.10</version.jacoco.plugin>
 
-    <version.buildnumber.plugin>1.4</version.buildnumber.plugin>
-    <version.native2ascii.plugin>1.0-beta-1</version.native2ascii.plugin>
+    <version.buildnumber.plugin>3.1.0</version.buildnumber.plugin>
+    <version.native2ascii.plugin>2.1.0</version.native2ascii.plugin>
 
     <version.sonar-packaging.plugin>1.21.0.505</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
 
-    <version.codehaus.license.plugin>2.0.0</version.codehaus.license.plugin>
-    <version.mycila.license.plugin>3.0</version.mycila.license.plugin>
-    <version.gpg.plugin>0.3.1</version.gpg.plugin>
-    <version.cyclonedx.plugin>2.6.0</version.cyclonedx.plugin>
+    <version.codehaus.license.plugin>2.2.0</version.codehaus.license.plugin>
+    <version.mycila.license.plugin>4.2</version.mycila.license.plugin>
+    <version.sign.plugin>1.0.1</version.sign.plugin>
+    <version.cyclonedx.plugin>2.7.9</version.cyclonedx.plugin>
 
     <!-- To configure maven-license-plugin to check license headers -->
     <license.name>GNU LGPL v3</license.name>
@@ -130,15 +129,6 @@
   </properties>
 
   <build>
-    <extensions>
-      <!-- See SONARPLUGINS-839 and SONARPLUGINS-840 -->
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav</artifactId>
-        <version>1.0-beta-2</version>
-      </extension>
-    </extensions>
-
     <pluginManagement>
       <plugins>
         <!-- Plugins ordered by shortname (archetype, assembly ...) -->
@@ -146,16 +136,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>${version.assembly.plugin}</version>
-          <configuration>
-            <archiverConfig>
-              <!-- Workaround for http://jira.codehaus.org/browse/MASSEMBLY-422 -->
-              <!-- 420(dec) = 644(oct) -->
-              <fileMode>420</fileMode>
-              <!-- 493(dec) = 755(oct) -->
-              <directoryMode>493</directoryMode>
-              <defaultDirectoryMode>493</defaultDirectoryMode>
-            </archiverConfig>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -236,11 +216,6 @@
           </configuration>
         </plugin>
         <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>jarjar-maven-plugin</artifactId>
-          <version>${version.jarjar.plugin}</version>
-        </plugin>
-        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${version.jar.plugin}</version>
@@ -248,7 +223,7 @@
             <archive>
               <manifestEntries>
                 <Version>${project.version}</Version>
-                <!-- ${buildNumber} is the svn revision generated by the buildnumber-maven-plugin -->
+                <!-- ${buildNumber} is generated by the buildnumber-maven-plugin -->
                 <Implementation-Build>${buildNumber}</Implementation-Build>
                 <Build-Time>${timestamp}</Build-Time>
               </manifestEntries>
@@ -317,7 +292,7 @@
         <plugin>
           <groupId>org.simplify4u.plugins</groupId>
           <artifactId>sign-maven-plugin</artifactId>
-          <version>${version.gpg.plugin}</version>
+	  <version>${version.sign.plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.cyclonedx</groupId>
@@ -468,7 +443,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <!-- ${buildNumber} is the svn revision generated by the buildnumber-maven-plugin -->
+              <!-- ${buildNumber} is generated by the buildnumber-maven-plugin -->
               <Implementation-Build>${buildNumber}</Implementation-Build>
               <Build-Time>${timestamp}</Build-Time>
             </manifestEntries>
@@ -586,7 +561,7 @@
           <plugin>
             <groupId>org.simplify4u.plugins</groupId>
             <artifactId>sign-maven-plugin</artifactId>
-            <version>${version.gpg.plugin}</version>
+            <version>${version.sign.plugin}</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -689,8 +664,6 @@
             </executions>
           </plugin>
           <plugin>
-            <!-- this maven plugin is not deployed in Maven Central. It should be downloaded
-            from JFrog JCenter or from SonarSource repositories -->
             <groupId>org.jfrog.buildinfo</groupId>
             <artifactId>artifactory-maven-plugin</artifactId>
             <version>${version.artifactory.plugin}</version>
