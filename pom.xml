@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource.parent</groupId>
   <artifactId>parent</artifactId>
-  <version>69.0.0-SNAPSHOT</version>
+  <version>70.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>SonarSource OSS parent</name>
@@ -104,7 +104,7 @@
     <version.shade.plugin>3.5.0</version.shade.plugin>
     <version.source.plugin>3.3.0</version.source.plugin>
     <version.site.plugin>3.7.1</version.site.plugin>
-    <version.artifactory.plugin>3.4.0</version.artifactory.plugin>
+    <version.artifactory.plugin>3.5.1</version.artifactory.plugin>
     <version.jacoco.plugin>0.8.10</version.jacoco.plugin>
 
     <version.buildnumber.plugin>3.1.0</version.buildnumber.plugin>
