@@ -105,7 +105,7 @@
     <version.source.plugin>3.3.0</version.source.plugin>
     <version.site.plugin>3.7.1</version.site.plugin>
     <version.artifactory.plugin>3.5.1</version.artifactory.plugin>
-    <version.jacoco.plugin>0.8.10</version.jacoco.plugin>
+    <version.jacoco.plugin>0.8.11</version.jacoco.plugin>
 
     <version.buildnumber.plugin>3.1.0</version.buildnumber.plugin>
     <version.native2ascii.plugin>2.1.0</version.native2ascii.plugin>
