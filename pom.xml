@@ -101,7 +101,7 @@
     <version.javadoc.plugin>3.6.3</version.javadoc.plugin>
     <version.plugin.plugin>3.9.0</version.plugin.plugin>
     <version.resources.plugin>3.3.1</version.resources.plugin>
-    <version.shade.plugin>3.5.0</version.shade.plugin>
+    <version.shade.plugin>3.5.3</version.shade.plugin>
     <version.source.plugin>3.3.1</version.source.plugin>
     <version.site.plugin>3.12.1</version.site.plugin>
     <version.artifactory.plugin>3.5.1</version.artifactory.plugin>
