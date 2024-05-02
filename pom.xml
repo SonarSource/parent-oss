@@ -95,7 +95,7 @@
     <version.enforcer.plugin>3.4.1</version.enforcer.plugin>
     <version.surefire.plugin>3.2.5</version.surefire.plugin>
     <version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>
-    <version.install.plugin>3.1.1</version.install.plugin>
+    <version.install.plugin>3.1.2</version.install.plugin>
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
     <version.jar.plugin>3.3.0</version.jar.plugin>
     <version.javadoc.plugin>3.6.3</version.javadoc.plugin>
