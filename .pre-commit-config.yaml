@@ -19,9 +19,9 @@ repos:
     rev: 9cce2940414e9560ae4c8518ddaee2ac1863a4d2  # frozen: v1.28.0
     hooks:
       - id: yamllint
-        args: [-d, "{extends: default, rules: {line-length: {max: 130}}}"]
-  - repo: https://github.com/markdownlint/markdownlint
-    rev: 4089e11ea61317283a50455ff73afe895b9d8b2d  # frozen: v0.11.0
+        args: [-d, "{extends: default, rules: {line-length: {max: 140}}}"]
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: c9ea83146232fb263effdfe6f222d87f5395b27a # v0.39.0
     hooks:
       - id: markdownlint
   - repo: https://github.com/python-jsonschema/check-jsonschema
