@@ -1,0 +1,15 @@
+name: Pre-commit checks
+on:
+  pull_request:
+  merge_group:
+
+jobs:
+  pre-commit:
+    name: "pre-commit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: SonarSource/gh-action_pre-commit@2f1b605a435e0896282366dce6ca4ce9b98705b5 # 0.0.6
+        with:
+          extra-args: >
+            --from-ref=origin/${{ github.event.pull_request.base.ref }}
+            --to-ref=${{ github.event.pull_request.head.sha }}

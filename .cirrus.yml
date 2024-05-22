@@ -1,10 +1,12 @@
 env:
   ARTIFACTORY_URL: VAULT[development/kv/data/repox data.url]
   ARTIFACTORY_PRIVATE_USERNAME: vault-${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-private-reader
-  ARTIFACTORY_DEPLOY_USERNAME: vault-${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-qa-deployer  # Possible values for ARTIFACTORY_DEPLOY_REPO: sonarsource-private-qa, sonarsource-public-qa
+  ARTIFACTORY_DEPLOY_USERNAME: vault-${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-qa-deployer
   ARTIFACTORY_DEPLOY_PASSWORD: VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-qa-deployer access_token]
+  # Possible values for ARTIFACTORY_DEPLOY_REPO: sonarsource-private-qa, sonarsource-public-qa
   ARTIFACTORY_DEPLOY_REPO: sonarsource-public-qa
-  ARTIFACTORY_ACCESS_TOKEN: VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-private-reader access_token]
+  ARTIFACTORY_ACCESS_TOKEN: >-
+    VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-private-reader access_token]
 
   # burgr notification
   BURGR_URL: VAULT[development/kv/data/burgr data.url]
@@ -24,13 +26,13 @@ container_definition: &CONTAINER_DEFINITION
 
 only_sonarsource_qa: &ONLY_SONARSOURCE_QA
   only_if: >
-    $CIRRUS_USER_COLLABORATOR == 'true' && 
-    $CIRRUS_TAG == "" && 
-    ($CIRRUS_PR != "" 
-    || $CIRRUS_BRANCH == 'master' 
-    || $CIRRUS_BRANCH =~ "branch-.*" 
-    || $CIRRUS_BRANCH =~ "dogfood-on-.*" 
-    || $CIRRUS_BUILD_SOURCE == 'api' 
+    $CIRRUS_USER_COLLABORATOR == 'true' &&
+    $CIRRUS_TAG == "" &&
+    ($CIRRUS_PR != ""
+    || $CIRRUS_BRANCH == 'master'
+    || $CIRRUS_BRANCH =~ "branch-.*"
+    || $CIRRUS_BRANCH =~ "dogfood-on-.*"
+    || $CIRRUS_BUILD_SOURCE == 'api'
     )
 
 build_task:
@@ -63,7 +65,8 @@ promote_task:
     cpu: 1
     memory: 1G
   env:
-    ARTIFACTORY_PROMOTE_ACCESS_TOKEN: VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-promoter access_token]
+    ARTIFACTORY_PROMOTE_ACCESS_TOKEN: >-
+      VAULT[development/artifactory/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-promoter access_token]
     GITHUB_TOKEN: VAULT[development/github/token/${CIRRUS_REPO_OWNER}-${CIRRUS_REPO_NAME}-promotion token]
     # artifacts that will have downloadable links in burgr
     ARTIFACTS: org.sonarsource.parent:parent:pom
