@@ -114,7 +114,7 @@
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
 
     <version.codehaus.license.plugin>2.2.0</version.codehaus.license.plugin>
-    <version.mycila.license.plugin>4.2</version.mycila.license.plugin>
+    <version.mycila.license.plugin>4.5</version.mycila.license.plugin>
     <version.sign.plugin>1.0.1</version.sign.plugin>
     <version.cyclonedx.plugin>2.7.9</version.cyclonedx.plugin>
 
