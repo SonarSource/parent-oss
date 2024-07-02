@@ -108,7 +108,7 @@
     <version.jacoco.plugin>0.8.12</version.jacoco.plugin>
 
     <version.buildnumber.plugin>3.2.0</version.buildnumber.plugin>
-    <version.native2ascii.plugin>2.1.0</version.native2ascii.plugin>
+    <version.native2ascii.plugin>2.1.1</version.native2ascii.plugin>
 
     <version.sonar-packaging.plugin>1.23.0.740</version.sonar-packaging.plugin>
     <version.sonar-dev.plugin>1.8</version.sonar-dev.plugin>
