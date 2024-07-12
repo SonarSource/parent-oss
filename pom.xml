@@ -93,7 +93,7 @@
     <version.dependency.plugin>3.7.1</version.dependency.plugin>
     <version.deploy.plugin>3.1.2</version.deploy.plugin>
     <version.enforcer.plugin>3.5.0</version.enforcer.plugin>
-    <version.surefire.plugin>3.3.0</version.surefire.plugin>
+    <version.surefire.plugin>3.3.1</version.surefire.plugin>
     <version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>
     <version.install.plugin>3.1.2</version.install.plugin>
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
