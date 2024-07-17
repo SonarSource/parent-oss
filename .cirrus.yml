@@ -21,14 +21,16 @@ container_definition: &CONTAINER_DEFINITION
 
 only_sonarsource_qa: &ONLY_SONARSOURCE_QA
   only_if: >
-    $CIRRUS_USER_COLLABORATOR == 'true' &&
-    $CIRRUS_TAG == "" &&
-    ($CIRRUS_PR != ""
-    || $CIRRUS_BRANCH == 'master'
-    || $CIRRUS_BRANCH =~ "branch-.*"
-    || $CIRRUS_BRANCH =~ "dogfood-on-.*"
-    || $CIRRUS_BUILD_SOURCE == 'api'
-    )
+    (
+      $CIRRUS_USER_COLLABORATOR == 'true' &&
+      $CIRRUS_TAG == "" &&
+      ($CIRRUS_PR != ""
+      || $CIRRUS_BRANCH == 'master'
+      || $CIRRUS_BRANCH =~ "branch-.*"
+      || $CIRRUS_BRANCH =~ "dogfood-on-.*"
+      || $CIRRUS_BUILD_SOURCE == 'api'
+      )
+    ) || $CIRRUS_CRON == 'nightly'
 
 build_task:
   <<: *ONLY_SONARSOURCE_QA
