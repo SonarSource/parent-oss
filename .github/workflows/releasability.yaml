@@ -18,6 +18,6 @@ jobs:
       && github.event.check_suite.conclusion == 'success'
       && github.event.check_suite.app.slug == 'cirrus-ci'
     steps:
-      - uses: SonarSource/gh-action_releasability/releasability-status@0295eda42f8c7d4ca68648e510189255b36ed7d9 # 1.2.3
+      - uses: SonarSource/gh-action_releasability/releasability-status@a934beb936135d2d36ea77741b978f3e77e8eccb # 2.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
