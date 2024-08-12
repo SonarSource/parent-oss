@@ -83,6 +83,7 @@
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <sonar.snapshotRepository.id>snapshot</sonar.snapshotRepository.id>
     <sonar.snapshotRepository.url />
+    <artifactory.publish.artifacts>true</artifactory.publish.artifacts>
 
     <!-- ================ -->
     <!-- Plugins versions -->
@@ -712,7 +713,7 @@
                     <username>{{ARTIFACTORY_DEPLOY_USERNAME}}</username>
                     <password>{{ARTIFACTORY_DEPLOY_PASSWORD}}</password>
                     <publishBuildInfo>true</publishBuildInfo>
-                    <publishArtifacts>true</publishArtifacts>
+                    <publishArtifacts>${artifactory.publish.artifacts}</publishArtifacts>
                   </publisher>
                   <buildInfo>
                     <buildName>${gitRepositoryName}</buildName>
