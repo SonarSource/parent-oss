@@ -99,7 +99,7 @@
     <version.install.plugin>3.1.2</version.install.plugin>
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
     <version.jar.plugin>3.4.2</version.jar.plugin>
-    <version.javadoc.plugin>3.8.0</version.javadoc.plugin>
+    <version.javadoc.plugin>3.10.0</version.javadoc.plugin>
     <version.plugin.plugin>3.14.0</version.plugin.plugin>
     <version.resources.plugin>3.3.1</version.resources.plugin>
     <version.shade.plugin>3.6.0</version.shade.plugin>
