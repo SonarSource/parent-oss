@@ -108,7 +108,7 @@
     <version.artifactory.plugin>3.6.2</version.artifactory.plugin>
     <version.jacoco.plugin>0.8.12</version.jacoco.plugin>
 
-    <version.buildnumber.plugin>3.2.0</version.buildnumber.plugin>
+    <version.buildnumber.plugin>3.2.1</version.buildnumber.plugin>
     <version.native2ascii.plugin>2.1.1</version.native2ascii.plugin>
 
     <version.sonar-packaging.plugin>1.23.0.740</version.sonar-packaging.plugin>
