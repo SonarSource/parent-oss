@@ -465,7 +465,6 @@
           </dependency>
         </dependencies>
         <configuration>
-          <header>sonarsource/licenseheaders/${license.name}.txt</header>
           <failIfMissing>true</failIfMissing>
           <strictCheck>true</strictCheck>
           <encoding>${project.build.sourceEncoding}</encoding>
@@ -483,18 +482,23 @@
             <css>SLASHSTAR_STYLE</css>
             <less>SLASHSTAR_STYLE</less>
           </mapping>
-          <includes>
-            <include>src/*/java/**/*.java</include>
-            <include>src/**/*.js</include>
-            <include>src/**/*.ts</include>
-            <include>src/**/*.tsx</include>
-            <include>src/**/*.css</include>
-            <include>src/**/*.less</include>
-            <include>tests/**/*.test.ts</include>
-          </includes>
-          <excludes>
-            <exclude>src/test/resources/**</exclude>
-          </excludes>
+          <licenseSets>
+            <licenseSet>
+              <header>sonarsource/licenseheaders/${license.name}.txt</header>
+              <includes>
+                <include>src/*/java/**/*.java</include>
+                <include>src/**/*.js</include>
+                <include>src/**/*.ts</include>
+                <include>src/**/*.tsx</include>
+                <include>src/**/*.css</include>
+                <include>src/**/*.less</include>
+                <include>tests/**/*.test.ts</include>
+              </includes>
+              <excludes>
+                <exclude>src/test/resources/**</exclude>
+              </excludes>
+            </licenseSet>
+          </licenseSets>
         </configuration>
         <executions>
           <execution>
