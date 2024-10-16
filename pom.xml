@@ -194,7 +194,7 @@
             <licenseMerges>
               <!-- keep values on a single line -->
               <licenseMerge>agpl_v3|AGPL 3|GNU Affero General Public License (AGPL) version 3.0|AGPL 3.0</licenseMerge>
-              <licenseMerge>apache_v2|Apache 2|Apache 2.0|Apache Public License 2.0|The Apache Software License, Version 2.0|Apache License, Version 2.0|Apache License, version 2.0|Apache Software Licenses|Apache License Version 2.0|ASF 2.0|ASL, version 2|The Apache License, Version 2.0</licenseMerge>
+              <licenseMerge>apache_v2|Apache 2|Apache 2.0|Apache-2.0|Apache Public License 2.0|The Apache Software License, Version 2.0|Apache License, Version 2.0|Apache License, version 2.0|Apache Software Licenses|Apache License Version 2.0|ASF 2.0|ASL, version 2|The Apache License, Version 2.0</licenseMerge>
               <licenseMerge>bouncy_castle|Bouncy Castle Licence</licenseMerge>
               <licenseMerge>bsd|BSD|BSD License|The BSD License|3-Clause BSD License|The BSD 3-Clause License|New BSD License|New BSD license|BSD 3-Clause|BSD-3-Clause|BSD-style license|Trilead Library License (BSD-Like)|Revised BSD|BSD style</licenseMerge>
               <licenseMerge>cddl_gpl|Dual license: CDDL 1.0 and GPL v2|Dual license consisting of the CDDL v1.0 and GPL v2|CDDL+GPLv2|CDDL+GPL|CDDL+GPL License|Dual license: CDDL 1.1 and GPL v2|Dual license consisting of the CDDL v1.1 and GPL v2|CDDL1_1+GPLv2|Dual License: CDDL 1.0 and GPL V2 with Classpath Exception|CDDL + GPLv2 with classpath exception|CDDL/GPLv2+CE</licenseMerge>
