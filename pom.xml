@@ -104,7 +104,7 @@
     <version.resources.plugin>3.3.1</version.resources.plugin>
     <version.shade.plugin>3.6.0</version.shade.plugin>
     <version.source.plugin>3.3.1</version.source.plugin>
-    <version.site.plugin>3.20.0</version.site.plugin>
+    <version.site.plugin>3.21.0</version.site.plugin>
     <version.artifactory.plugin>3.5.1</version.artifactory.plugin>
     <version.jacoco.plugin>0.8.12</version.jacoco.plugin>
 
