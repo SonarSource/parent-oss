@@ -8,7 +8,7 @@ jobs:
     name: "pre-commit"
     runs-on: ubuntu-latest
     steps:
-      - uses: SonarSource/gh-action_pre-commit@372a7dcca1ed021cdf22e95636670870689ecd58 # 1.0.4
+      - uses: SonarSource/gh-action_pre-commit@469b062f5c72f80612f6ba51e8191524eba7d3b8 # 1.0.5
         with:
           extra-args: >
             --from-ref=origin/${{ github.event.pull_request.base.ref }}
