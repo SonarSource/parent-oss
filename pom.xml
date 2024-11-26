@@ -190,7 +190,7 @@
             <failOnBlacklist>true</failOnBlacklist>
             <failOnMissing>true</failOnMissing>
             <includedScopes>compile</includedScopes>
-            <includedLicenses>apache_v2|bouncy_castle|bsd|cddl_gpl|cddl_v1|epl_v1|epl_v2|h2|jaxen|lgpl_v2_1|lgpl_v3|mit|public_domain|tmate</includedLicenses>
+            <includedLicenses>apache_v2|bouncy_castle|bsd|cddl_gpl|cddl_v1|epl_v1|epl_v2|h2|jaxen|lgpl_v2_1|lgpl_v3|mit|public_domain|tmate|SSALv1</includedLicenses>
             <licenseMerges>
               <!-- keep values on a single line -->
               <licenseMerge>agpl_v3|AGPL 3|GNU Affero General Public License (AGPL) version 3.0|AGPL 3.0</licenseMerge>
