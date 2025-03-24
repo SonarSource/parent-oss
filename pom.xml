@@ -9,7 +9,7 @@
 
   <name>SonarSource OSS parent</name>
   <description>Parent pom of SonarSource public projects</description>
-  <url>http://docs.sonarqube.org/display/PLUG/Plugin+Library</url>
+  <url>https://docs.sonarsource.com/sonarqube-server/latest/extension-guide/developing-a-plugin/plugin-basics/</url>
   <inceptionYear>2009</inceptionYear>
   <!-- License defined here, because most of projects uses this license. Can be overridden in children POMs. -->
   <licenses>
