@@ -6,7 +6,7 @@ on:
 jobs:
   pre-commit:
     name: "pre-commit"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-large
     steps:
       - uses: SonarSource/gh-action_pre-commit@fc9d73025994fd1c2b96d568c8c8a4af82a3ae21 # 1.0.6
         with:
