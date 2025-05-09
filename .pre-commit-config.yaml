@@ -25,7 +25,7 @@ repos:
     hooks:
       - id: markdownlint
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 9ff55b0adf11b603e0e2b4e1d639255278f4316f  # frozen: 0.18.3
+    rev: 78690b6ce14891a2ae695190a74e966217eec3c8  # frozen: 0.33.0
     hooks:
       - id: check-github-workflows
       - id: check-renovate
