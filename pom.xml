@@ -683,26 +683,30 @@
                 <configuration>
                   <artifactory>
                     <envVarsIncludePatterns>
-                      GIT_SHA1,
-                      GITHUB_BRANCH,
-                      ARTIFACTS_TO_PUBLISH,
                       *_VERSION,
-                      JAVA,
-                      CIRRUS_CHANGE_MESSAGE,
-                      PROJECT,
                       ARTIFACTORY_DEPLOY_REPO,
                       ARTIFACTORY_DEPLOY_USERNAME,
                       ARTIFACTORY_PRIVATE_USERNAME,
-                      BUILD_NUMBER
+                      ARTIFACTS_TO_PUBLISH,
+                      BUILD_NUMBER,
+                      CIRRUS_CHANGE_MESSAGE,
+                      GITHUB_*REF*,
+                      GITHUB_BRANCH,
+                      GITHUB_REPOSITORY,
+                      GITHUB_RUN*,
+                      GITHUB_SHA,
+                      GIT_SHA1,
+                      JAVA,
+                      PROJECT
                     </envVarsIncludePatterns>
                     <includeEnvVars>true</includeEnvVars>
                     <timeoutSec>60</timeoutSec>
                   </artifactory>
                   <deployProperties>
-                    <vcs.revision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT|BUILD_SOURCEVERSION}}</vcs.revision>
-                    <vcs.branch>{{GIT_BRANCH|TRAVIS_BRANCH|APPVEYOR_REPO_BRANCH|SYSTEM_PULLREQUEST_TARGETBRANCH|BUILD_SOURCEBRANCHNAME}}</vcs.branch>
+                    <vcs.revision>{{GITHUB_SHA|GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT|BUILD_SOURCEVERSION}}</vcs.revision>
+                    <vcs.branch>{{GITHUB_REF|GIT_BRANCH|TRAVIS_BRANCH|APPVEYOR_REPO_BRANCH|SYSTEM_PULLREQUEST_TARGETBRANCH|BUILD_SOURCEBRANCHNAME}}</vcs.branch>
                     <build.name>${gitRepositoryName}</build.name>
-                    <build.number>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER|BUILD_BUILDID}}</build.number>
+                    <build.number>{{BUILD_NUMBER|BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER|BUILD_BUILDID}}</build.number>
                   </deployProperties>
                   <licenses>
                     <autoDiscover>true</autoDiscover>
@@ -721,9 +725,9 @@
                   </publisher>
                   <buildInfo>
                     <buildName>${gitRepositoryName}</buildName>
-                    <buildNumber>{{BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER|BUILD_BUILDID}}</buildNumber>
+                    <buildNumber>{{BUILD_NUMBER|BUILD_ID|TRAVIS_BUILD_NUMBER|APPVEYOR_BUILD_NUMBER|BUILD_BUILDID}}</buildNumber>
                     <buildUrl>{{CI_BUILD_URL|BUILD_URL}}</buildUrl>
-                    <vcsRevision>{{GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT|BUILD_SOURCEVERSION}}</vcsRevision>
+                    <vcsRevision>{{GITHUB_SHA|GIT_COMMIT|TRAVIS_COMMIT|APPVEYOR_REPO_COMMIT|BUILD_SOURCEVERSION}}</vcsRevision>
                   </buildInfo>
                 </configuration>
               </execution>
