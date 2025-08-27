@@ -684,9 +684,8 @@
                   <artifactory>
                     <envVarsIncludePatterns>
                       *_VERSION,
+                      *_USERNAME,
                       ARTIFACTORY_DEPLOY_REPO,
-                      ARTIFACTORY_DEPLOY_USERNAME,
-                      ARTIFACTORY_PRIVATE_USERNAME,
                       ARTIFACTS_TO_PUBLISH,
                       BUILD_NUMBER,
                       CIRRUS_CHANGE_MESSAGE,
