@@ -12,7 +12,8 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    uses: SonarSource/gh-action_release/.github/workflows/main.yaml@22cded87a58ad248b24669e05da2fb34ce7c699e # 5.19.0
+    uses: SonarSource/gh-action_release/.github/workflows/main.yaml@4a05ba99d2db61c5ab50467d169e905a746c2693 # 6.2.0
     with:
       publishToBinaries: false
       mavenCentralSync: true
+      slackChannel: squad-eng-xp-notifications
