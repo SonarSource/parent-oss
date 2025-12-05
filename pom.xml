@@ -100,7 +100,7 @@
     <version.beanshell.plugin>1.4</version.beanshell.plugin>
     <version.jar.plugin>3.4.2</version.jar.plugin>
     <version.javadoc.plugin>3.11.2</version.javadoc.plugin>
-    <version.plugin.plugin>3.15.1</version.plugin.plugin>
+    <version.plugin.plugin>3.15.2</version.plugin.plugin>
     <version.resources.plugin>3.3.1</version.resources.plugin>
     <version.shade.plugin>3.6.0</version.shade.plugin>
     <version.source.plugin>3.3.1</version.source.plugin>
