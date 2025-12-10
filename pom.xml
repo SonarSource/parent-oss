@@ -461,7 +461,7 @@
           <dependency>
             <groupId>org.sonarsource.license-headers</groupId>
             <artifactId>license-headers</artifactId>
-            <version>1.4.0.1404</version>
+            <version>1.6.0.21</version>
           </dependency>
         </dependencies>
         <configuration>
