@@ -119,7 +119,7 @@
     <version.sign.plugin>1.1.0</version.sign.plugin>
     <version.cyclonedx.plugin>2.9.1</version.cyclonedx.plugin>
 
-    <!-- To configure maven-license-plugin to check license headers (dateless templates in license-headers) -->
+    <!-- To configure com.mycila:license-maven-plugin to check license headers (dateless templates in license-headers) -->
     <license.name>SSALv1</license.name>
     <license.owner>SonarSource Sàrl</license.owner>
     <license.title>${project.name}</license.title>
