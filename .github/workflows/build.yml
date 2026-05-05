@@ -24,7 +24,7 @@ jobs:
       - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
         with:
           version: 2025.7.12
-      - uses: SonarSource/ci-github-actions/build-maven@master
+      - uses: SonarSource/ci-github-actions/build-maven@v1
         with:
           deploy-pull-request: true
           artifactory-reader-role: private-reader
@@ -46,4 +46,4 @@ jobs:
         with:
           version: 2025.7.12
           cache_save: false
-      - uses: SonarSource/ci-github-actions/promote@master
+      - uses: SonarSource/ci-github-actions/promote@v1
