@@ -6,7 +6,7 @@ on:
 jobs:
   pre-commit:
     name: "pre-commit"
-    runs-on: github-ubuntu-latest-s
+    runs-on: warp-custom-ubuntu-24-04
     steps:
       - uses: SonarSource/gh-action_pre-commit@0ecedc4e4070444a95f6b6714ddc3ebcdde697c4 # 1.1.0
         with:
