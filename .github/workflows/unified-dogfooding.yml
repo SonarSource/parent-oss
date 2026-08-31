@@ -13,11 +13,11 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: jdx/mise-action@dba19683ed58901619b14f395a24841710cb4925 # v4.1.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
         with:
-          version: 2026.6.1
-      - uses: SonarSource/ci-github-actions/build-maven@v1
+          version: 2026.8.14
+      - uses: SonarSource/ci-github-actions/build-maven@983645f538ff01044b1e567adb23e6f527d8b52a # 1.8.9
         with:
           run-shadow-scans: true
           artifactory-reader-role: private-reader
