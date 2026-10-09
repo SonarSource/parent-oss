@@ -19,7 +19,7 @@ To learn more about Sonar products, visit the [Sonar website](https://www.sonars
 
 ## License
 
-Copyright 2009-2025 SonarSource.
+Copyright 2009-2026 SonarSource.
 
 Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.gnu.org/licenses/lgpl.txt)
 
