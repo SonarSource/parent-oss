@@ -21,9 +21,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: step-security/mise-action@2796166110dee826668caddd4bffedae5116e7cd # v4.2.0
+      - uses: SonarSource/mise-action-wrapper@c2a44f2676ca98598415a83c5a4649e6a45a225a # 1.0.3
         with:
-          version: 2025.7.12
+          mise-version: 2025.7.12
       - uses: SonarSource/ci-github-actions/build-maven@v1
         env:
           ARTIFACTS_TO_PUBLISH: org.sonarsource.parent:parent:pom
@@ -44,8 +44,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: step-security/mise-action@2796166110dee826668caddd4bffedae5116e7cd # v4.2.0
+      - uses: SonarSource/mise-action-wrapper@c2a44f2676ca98598415a83c5a4649e6a45a225a # 1.0.3
         with:
-          version: 2025.7.12
-          cache_save: false
+          mise-version: 2025.7.12
       - uses: SonarSource/ci-github-actions/promote@v1
