@@ -14,9 +14,9 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: SonarSource/mise-action-wrapper@c2a44f2676ca98598415a83c5a4649e6a45a225a # 1.0.3
+      - uses: SonarSource/mise-action-wrapper@65aa289d3f408f4999d13a52a14cde4f54b48442 # 2.0.0
         with:
-          mise-version: 2026.6.1
+          version: 2026.6.1
       - uses: SonarSource/ci-github-actions/build-maven@v1
         with:
           run-shadow-scans: true
